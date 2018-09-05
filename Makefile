@@ -40,7 +40,13 @@ fonts:
 themeing: 
 	# Change Scrollbars and highlights	
 	sh ./static/ubuntu-18.04-theme.sh
- 
+
+wallpapers:
+	mkdir -p ${HOME}/.local/share/gnome-background-properties/
+	cp -r static/wallpapers/alena-aenami ${HOME}/Pictures/
+	cp static/wallpapers/zinglax-wallpapers.xml ${HOME}/.local/share/gnome-background-properties/zinglax-wallpapers.xml
+
+
 ansible:
 	sudo add-apt-repository -y ppa:ansible/ansible
 	sudo apt install -y ansible

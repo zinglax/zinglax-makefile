@@ -18,3 +18,20 @@ line 4 line
 EOL
 
 cat myconfig.conf
+
+
+for i in $( ls wallpapers/alena-aenami ); do
+    echo "
+<static>
+  <!-- Duration in seconds to display the background -->
+  <duration>300.0</duration>
+  <file>/home/dylan/Pictures/alena-aenami/$i</file>
+</static>
+<transition>
+  <!-- Duration of the transition in seconds, default is 2 seconds -->
+  <duration>5.0</duration>
+  <from>/home/dylan/Pictures/alena-aenami/$i</from>
+  <to>/home/dylan/Pictures/alena-aenami/$i</to>
+</transition>
+"
+done
