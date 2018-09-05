@@ -1,0 +1,14 @@
+[legacy/profiles:]
+list=['b1dcc9dd-5262-4d8d-a863-c897e6d979b9', 'bbc2e057-cffc-4075-89a8-b3a0097583af']
+
+[legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+use-system-font=false
+font='Inconsolata Medium 12'
+
+[legacy/profiles:/:bbc2e057-cffc-4075-89a8-b3a0097583af]
+use-system-font=false
+visible-name='test'
+font='Inconsolata Medium 12'
+
+[legacy]
+schema-version=uint32 3
