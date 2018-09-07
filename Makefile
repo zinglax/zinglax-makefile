@@ -1,11 +1,54 @@
-
-
-.PHONY: all update upgrade
+#                                             ,dPYb,                               
+# =========================================== IP'`Yb ==============================
+#              gg                             I8  8I                               
+#              ""                             I8  8'                               
+#     ,gggg,   gg    ,ggg,,ggg,     ,gggg,gg  I8 dP    ,gggg,gg     ,gg,   ,gg     
+#    d8"  Yb   88   ,8" "8P" "8,   dP"  "Y8I  I8dP    dP"  "Y8I    d8""8b,dP"      
+#   dP    dP   88   I8   8I   8I  i8'    ,8I  I8P    i8'    ,8I   dP   ,88"        
+# ,dP  ,adP' _,88,_,dP   8I   Yb,,d8,   ,d8I ,d8b,_ ,d8,   ,d8b,,dP  ,dP"Y8,       
+# 8"   ""Y8d88P""Y88P'   8I   `Y8P"Y8888P"8888P'"Y88P"Y8888P"`Y88"  dP"   "Y8      
+#       ,d8I'                           ,d8I'                                      
+#     ,dP'8I                          ,dP'8I        Whooohooo this is frigken      
+#    ,8"  8I      Make it,           ,8"  8I               AWESOME!!!!!            
+#     `Y8P"           like a boss     `Y8P"                                        
+#  ,ggg, ,ggg,_,ggg,                                                               
+# dP""Y8dP""Y88P""Y8b              ,dPYb,              ,dPYb,       ,dPYb,         
+# Yb, `88'  `88'  `88              IP'`Yb              IP'`Yb       IP'`Yb         
+#  `"  88    88    88              I8  8I              I8  8I  gg   I8  8I         
+#      88    88    88              I8  8bgg,           I8  8'  ""   I8  8'         
+#      88    88    88    ,gggg,gg  I8 dP" "8   ,ggg,   I8 dP   gg   I8 dP   ,ggg,  
+#      88    88    88   dP"  "Y8I  I8d8bggP"  i8" "8i  I8dP    88   I8dP   i8" "8i 
+#      88    88    88  i8'    ,8I  I8P' "Yb,  I8, ,8I  I8P     88   I8P    I8, ,8I 
+#      88    88    Y8,,d8,   ,d8b,,d8    `Yb, `YbadP' ,d8b,_ _,88,_,d8b,_  `YbadP' 
+#      88    88    `Y8P"Y8888P"`Y888P      Y8888P"Y888PI8"8888P""Y88P'"Y88888P"Y888
+#                                                      I8 `8,                      
+# ==================================================== I8  `8, ====================
+#                                                      I8   8I                     
+#  Zinglax's Make file for creating new Dev box setup  I8   8I                     
+#                                                      I8, ,8'                     
+#                                                       "Y8P'                      
+# 
+.PHONY: all update upgrade system archives passwords fonts themeing wallpapers python ansible virutalbox vim tmux graphics media terminal-load
 
 
 all:
 	@echo "Building Full Development Machine. ☃️   "
-	make
+	make update
+	make upgrade 
+	make system 
+	make archives 
+	make passwords 
+	make fonts 
+	make themeing 
+	make wallpapers 
+	make python 
+	make ansible 
+	make virutalbox 
+	make vim 
+	make tmux 
+	make graphics 
+	make media 
+	make terminal-load 
 
 
 update:
@@ -22,7 +65,10 @@ system:
 	sudo apt install -y rabbitvcs-nautilus 
 	sudo apt install -y curl 
 	sudo apt install -y wget 
-	sudo apt install -y tracereoute 
+	sudo apt install -y traceroute 
+	sudo apt install -y ncat 
+	sudo apt install -y nmap 
+	sudo apt install -y tcpdump 
 
 archives:
 	sudo apt install -y unrar
@@ -45,6 +91,15 @@ wallpapers:
 	mkdir -p ${HOME}/.local/share/gnome-background-properties/
 	cp -r static/wallpapers/alena-aenami ${HOME}/Pictures/
 	cp static/wallpapers/zinglax-wallpapers.xml ${HOME}/.local/share/gnome-background-properties/zinglax-wallpapers.xml
+
+
+python:
+	# Python2 
+	sudo apt install python-pip
+	sudo pip install virtualenv
+	
+	# Python3
+	sudo apt install python3-pip
 
 
 ansible:
