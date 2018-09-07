@@ -6,8 +6,8 @@
 ###############################################################################
 NOW=$(date +"%Y-%m-%d-%H-%M-%S")
 THEMES_FOLDER=/usr/share/themes
-CURRENT_THEME=/etc/alternatives/current_theme.txt
-NEW_THEME=/etc/alternatives/current_theme-$NOW.txt
+CURRENT_THEME=${HOME}/.config/zinglax-current_theme.txt
+NEW_THEME=${HOME}/.config/zinglax-current_theme-$NOW.txt
 
 
 ###############################################################################

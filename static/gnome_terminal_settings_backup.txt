@@ -1,14 +1,66 @@
 [legacy/profiles:]
-list=['b1dcc9dd-5262-4d8d-a863-c897e6d979b9', 'bbc2e057-cffc-4075-89a8-b3a0097583af']
+default='bbc2e057-cffc-4075-89a8-b3a0097583af'
+list=['b1dcc9dd-5262-4d8d-a863-c897e6d979b9', 'bbc2e057-cffc-4075-89a8-b3a0097583af', 'f453ca72-88f2-4caa-8a49-389f7b9ea749']
+
+[legacy/profiles:/:924adb43-3e10-4da0-9a96-558375c1f622]
+use-system-font=false
+visible-name='another test'
+font='Tlwg Typo Medium 17'
 
 [legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+foreground-color='rgb(170,244,96)'
+visible-name='clear-back-green-black'
+default-size-columns=80
+default-size-rows=37
+cursor-background-color='rgb(255,100,13)'
 use-system-font=false
+cursor-colors-set=true
+use-theme-colors=false
+use-transparent-background=true
+cursor-foreground-color='rgb(255,255,255)'
 font='Inconsolata Medium 12'
+scrollback-unlimited=true
+use-theme-transparency=false
+cursor-blink-mode='on'
+background-color='rgb(0,0,0)'
+background-transparency-percent=20
 
 [legacy/profiles:/:bbc2e057-cffc-4075-89a8-b3a0097583af]
+foreground-color='rgb(181,244,155)'
+visible-name='green-on-darkblu'
+default-size-columns=78
+default-size-rows=35
+cursor-background-color='rgb(255,86,33)'
 use-system-font=false
-visible-name='test'
-font='Inconsolata Medium 12'
+cursor-colors-set=true
+use-theme-colors=false
+use-transparent-background=true
+font='Inconsolata Medium 13'
+use-theme-transparency=false
+scrollback-unlimited=true
+bold-color-same-as-fg=true
+background-color='rgb(4,12,32)'
+background-transparency-percent=7
+
+[legacy/profiles:/:f453ca72-88f2-4caa-8a49-389f7b9ea749]
+foreground-color='rgb(35,35,35)'
+visible-name='paper'
+palette=['rgb(7,54,66)', 'rgb(220,50,47)', 'rgb(133,153,0)', 'rgb(181,137,0)', 'rgb(38,139,210)', 'rgb(211,54,130)', 'rgb(42,161,152)', 'rgb(238,232,213)', 'rgb(0,43,54)', 'rgb(203,75,22)', 'rgb(88,110,117)', 'rgb(101,123,131)', 'rgb(131,148,150)', 'rgb(108,113,196)', 'rgb(147,161,161)', 'rgb(253,246,227)']
+cursor-background-color='rgb(93,255,66)'
+cursor-shape='block'
+cursor-colors-set=true
+use-theme-colors=false
+use-system-font=true
+use-transparent-background=true
+use-theme-transparency=false
+scrollback-unlimited=true
+bold-color-same-as-fg=true
+cursor-blink-mode='system'
+background-color='rgb(252,251,251)'
+background-transparency-percent=4
+
+[legacy/profiles:/:d5c7596c-8e9f-4158-ab81-633430ed7af1]
+visible-name='dasfasdf'
 
 [legacy]
 schema-version=uint32 3

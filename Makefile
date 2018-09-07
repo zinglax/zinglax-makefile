@@ -91,7 +91,10 @@ wallpapers:
 	mkdir -p ${HOME}/.local/share/gnome-background-properties/
 	cp -r static/wallpapers/alena-aenami ${HOME}/Pictures/
 	cp static/wallpapers/zinglax-wallpapers.xml ${HOME}/.local/share/gnome-background-properties/zinglax-wallpapers.xml
-
+	
+	# Replace file paths with the current home directory
+	sed -i -e "s|/home/dylan|${HOME}|g" "${HOME}/Pictures/alena-aenami/alena-aenami-wallpaper.xml"
+	sed -i -e "s|/home/dylan|${HOME}|g" "${HOME}/.local/share/gnome-background-properties/zinglax-wallpapers.xml"
 
 python:
 	# Python2 
