@@ -8,7 +8,7 @@
   </static>
   <transition>
     <!-- Duration of the transition in seconds, default is 2 seconds -->
-    <duration>5.0</duration>
+    <duration>0.9</duration>
     <from>/home/dylan/Pictures/alena-aenami/alena-aenami_10.jpg</from>
     <to>/home/dylan/Pictures/alena-aenami/alena-aenami_11.jpg</to>
   </transition>
@@ -21,7 +21,7 @@
   </static>
   <transition>
     <!-- Duration of the transition in seconds, default is 2 seconds -->
-    <duration>5.0</duration>
+    <duration>0.9</duration>
     <from>/home/dylan/Pictures/alena-aenami/alena-aenami_11.jpg</from>
     <to>/home/dylan/Pictures/alena-aenami/alena-aenami_12.jpg</to>
   </transition>
@@ -34,7 +34,7 @@
   </static>
   <transition>
     <!-- Duration of the transition in seconds, default is 2 seconds -->
-    <duration>5.0</duration>
+    <duration>0.9</duration>
     <from>/home/dylan/Pictures/alena-aenami/alena-aenami_12.jpg</from>
     <to>/home/dylan/Pictures/alena-aenami/alena-aenami_13.jpg</to>
   </transition>
@@ -47,7 +47,7 @@
   </static>
   <transition>
     <!-- Duration of the transition in seconds, default is 2 seconds -->
-    <duration>5.0</duration>
+    <duration>0.9</duration>
     <from>/home/dylan/Pictures/alena-aenami/alena-aenami_13.jpg</from>
     <to>/home/dylan/Pictures/alena-aenami/alena-aenami_14.jpg</to>
   </transition>
@@ -60,7 +60,7 @@
   </static>
   <transition>
     <!-- Duration of the transition in seconds, default is 2 seconds -->
-    <duration>5.0</duration>
+    <duration>0.9</duration>
     <from>/home/dylan/Pictures/alena-aenami/alena-aenami_14.jpg</from>
     <to>/home/dylan/Pictures/alena-aenami/alena-aenami_15.jpg</to>
   </transition>
@@ -73,7 +73,7 @@
   </static>
   <transition>
     <!-- Duration of the transition in seconds, default is 2 seconds -->
-    <duration>5.0</duration>
+    <duration>0.9</duration>
     <from>/home/dylan/Pictures/alena-aenami/alena-aenami_15.jpg</from>
     <to>/home/dylan/Pictures/alena-aenami/alena-aenami_16.jpg</to>
   </transition>
@@ -86,7 +86,7 @@
   </static>
   <transition>
     <!-- Duration of the transition in seconds, default is 2 seconds -->
-    <duration>5.0</duration>
+    <duration>0.9</duration>
     <from>/home/dylan/Pictures/alena-aenami/alena-aenami_16.jpg</from>
     <to>/home/dylan/Pictures/alena-aenami/alena-aenami_17.jpg</to>
   </transition>
@@ -99,7 +99,7 @@
   </static>
   <transition>
     <!-- Duration of the transition in seconds, default is 2 seconds -->
-    <duration>5.0</duration>
+    <duration>0.9</duration>
     <from>/home/dylan/Pictures/alena-aenami/alena-aenami_17.jpg</from>
     <to>/home/dylan/Pictures/alena-aenami/alena-aenami_18.png</to>
   </transition>
@@ -112,7 +112,7 @@
   </static>
   <transition>
     <!-- Duration of the transition in seconds, default is 2 seconds -->
-    <duration>5.0</duration>
+    <duration>0.9</duration>
     <from>/home/dylan/Pictures/alena-aenami/alena-aenami_18.png</from>
     <to>/home/dylan/Pictures/alena-aenami/alena-aenami_19.jpg</to>
   </transition>
@@ -125,7 +125,7 @@
   </static>
   <transition>
     <!-- Duration of the transition in seconds, default is 2 seconds -->
-    <duration>5.0</duration>
+    <duration>0.9</duration>
     <from>/home/dylan/Pictures/alena-aenami/alena-aenami_19.jpg</from>
     <to>/home/dylan/Pictures/alena-aenami/alena-aenami_1.jpg</to>
   </transition>
@@ -138,7 +138,7 @@
   </static>
   <transition>
     <!-- Duration of the transition in seconds, default is 2 seconds -->
-    <duration>5.0</duration>
+    <duration>0.9</duration>
     <from>/home/dylan/Pictures/alena-aenami/alena-aenami_1.jpg</from>
     <to>/home/dylan/Pictures/alena-aenami/alena-aenami_20.jpg</to>
   </transition>
@@ -151,7 +151,7 @@
   </static>
   <transition>
     <!-- Duration of the transition in seconds, default is 2 seconds -->
-    <duration>5.0</duration>
+    <duration>0.9</duration>
     <from>/home/dylan/Pictures/alena-aenami/alena-aenami_20.jpg</from>
     <to>/home/dylan/Pictures/alena-aenami/alena-aenami_21.jpg</to>
   </transition>
@@ -164,7 +164,7 @@
   </static>
   <transition>
     <!-- Duration of the transition in seconds, default is 2 seconds -->
-    <duration>5.0</duration>
+    <duration>0.9</duration>
     <from>/home/dylan/Pictures/alena-aenami/alena-aenami_21.jpg</from>
     <to>/home/dylan/Pictures/alena-aenami/alena-aenami_22.jpg</to>
   </transition>
@@ -177,7 +177,7 @@
   </static>
   <transition>
     <!-- Duration of the transition in seconds, default is 2 seconds -->
-    <duration>5.0</duration>
+    <duration>0.9</duration>
     <from>/home/dylan/Pictures/alena-aenami/alena-aenami_22.png</from>
     <to>/home/dylan/Pictures/alena-aenami/alena-aenami_23.png</to>
   </transition>
@@ -190,7 +190,7 @@
   </static>
   <transition>
     <!-- Duration of the transition in seconds, default is 2 seconds -->
-    <duration>5.0</duration>
+    <duration>0.9</duration>
     <from>/home/dylan/Pictures/alena-aenami/alena-aenami_23.jpg</from>
     <to>/home/dylan/Pictures/alena-aenami/alena-aenami_24.jpg</to>
   </transition>
@@ -203,7 +203,7 @@
   </static>
   <transition>
     <!-- Duration of the transition in seconds, default is 2 seconds -->
-    <duration>5.0</duration>
+    <duration>0.9</duration>
     <from>/home/dylan/Pictures/alena-aenami/alena-aenami_24.jpg</from>
     <to>/home/dylan/Pictures/alena-aenami/alena-aenami_25.png</to>
   </transition>
@@ -216,7 +216,7 @@
   </static>
   <transition>
     <!-- Duration of the transition in seconds, default is 2 seconds -->
-    <duration>5.0</duration>
+    <duration>0.9</duration>
     <from>/home/dylan/Pictures/alena-aenami/alena-aenami_25.png</from>
     <to>/home/dylan/Pictures/alena-aenami/alena-aenami_26.jpg</to>
   </transition>
@@ -229,7 +229,7 @@
   </static>
   <transition>
     <!-- Duration of the transition in seconds, default is 2 seconds -->
-    <duration>5.0</duration>
+    <duration>0.9</duration>
     <from>/home/dylan/Pictures/alena-aenami/alena-aenami_26.jpg</from>
     <to>/home/dylan/Pictures/alena-aenami/alena-aenami_2.jpg</to>
   </transition>
@@ -242,7 +242,7 @@
   </static>
   <transition>
     <!-- Duration of the transition in seconds, default is 2 seconds -->
-    <duration>5.0</duration>
+    <duration>0.9</duration>
     <from>/home/dylan/Pictures/alena-aenami/alena-aenami_2.jpg</from>
     <to>/home/dylan/Pictures/alena-aenami/alena-aenami_3.jpg</to>
   </transition>
@@ -255,7 +255,7 @@
   </static>
   <transition>
     <!-- Duration of the transition in seconds, default is 2 seconds -->
-    <duration>5.0</duration>
+    <duration>0.9</duration>
     <from>/home/dylan/Pictures/alena-aenami/alena-aenami_3.jpg</from>
     <to>/home/dylan/Pictures/alena-aenami/alena-aenami_4.jpg</to>
   </transition>
@@ -268,7 +268,7 @@
   </static>
   <transition>
     <!-- Duration of the transition in seconds, default is 2 seconds -->
-    <duration>5.0</duration>
+    <duration>0.9</duration>
     <from>/home/dylan/Pictures/alena-aenami/alena-aenami_4.jpg</from>
     <to>/home/dylan/Pictures/alena-aenami/alena-aenami_5.jpg</to>
   </transition>
@@ -281,7 +281,7 @@
   </static>
   <transition>
     <!-- Duration of the transition in seconds, default is 2 seconds -->
-    <duration>5.0</duration>
+    <duration>0.9</duration>
     <from>/home/dylan/Pictures/alena-aenami/alena-aenami_5.jpg</from>
     <to>/home/dylan/Pictures/alena-aenami/alena-aenami_6.jpg</to>
   </transition>
@@ -294,7 +294,7 @@
   </static>
   <transition>
     <!-- Duration of the transition in seconds, default is 2 seconds -->
-    <duration>5.0</duration>
+    <duration>0.9</duration>
     <from>/home/dylan/Pictures/alena-aenami/alena-aenami_6.jpg</from>
     <to>/home/dylan/Pictures/alena-aenami/alena-aenami_7.jpg</to>
   </transition>
@@ -307,7 +307,7 @@
   </static>
   <transition>
     <!-- Duration of the transition in seconds, default is 2 seconds -->
-    <duration>5.0</duration>
+    <duration>0.9</duration>
     <from>/home/dylan/Pictures/alena-aenami/alena-aenami_7.jpg</from>
     <to>/home/dylan/Pictures/alena-aenami/alena-aenami_8.jpg</to>
   </transition>
@@ -320,7 +320,7 @@
   </static>
   <transition>
     <!-- Duration of the transition in seconds, default is 2 seconds -->
-    <duration>5.0</duration>
+    <duration>0.9</duration>
     <from>/home/dylan/Pictures/alena-aenami/alena-aenami_8.jpg</from>
     <to>/home/dylan/Pictures/alena-aenami/alena-aenami_9.jpg</to>
   </transition>
@@ -333,7 +333,7 @@
   </static>
   <transition>
     <!-- Duration of the transition in seconds, default is 2 seconds -->
-    <duration>5.0</duration>
+    <duration>0.9</duration>
     <from>/home/dylan/Pictures/alena-aenami/alena-aenami_9.jpg</from>
     <to>/home/dylan/Pictures/alena-aenami/alena-aenami_1.jpg</to>
   </transition>

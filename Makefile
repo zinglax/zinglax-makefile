@@ -28,7 +28,7 @@
 #                                                      I8, ,8'                     
 #                                                       "Y8P'                      
 # 
-.PHONY: all update upgrade system archives passwords fonts themeing wallpapers python ansible virutalbox vim tmux graphics media terminal-load
+.PHONY: all update upgrade system filesystem archives passwords fonts themeing wallpapers python ansible virutalbox vim tmux graphics media terminal-load
 
 
 all:
@@ -36,6 +36,7 @@ all:
 	make update
 	make upgrade 
 	make system 
+	make filesystem 
 	make archives 
 	make passwords 
 	make fonts 
@@ -69,6 +70,10 @@ system:
 	sudo apt install -y ncat 
 	sudo apt install -y nmap 
 	sudo apt install -y tcpdump 
+
+filesystem:
+	mkdir -p ${HOME}/Gits
+	mkdir -p ${HOME}/Envs
 
 archives:
 	sudo apt install -y unrar
