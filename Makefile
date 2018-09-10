@@ -103,11 +103,11 @@ wallpapers:
 
 python:
 	# Python2 
-	sudo apt install python-pip
-	sudo pip install virtualenv
+	sudo apt -y install python-pip
+	sudo pip -y install virtualenv
 	
 	# Python3
-	sudo apt install python3-pip
+	sudo apt -y install python3-pip
 
 
 ansible:
