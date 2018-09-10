@@ -68,7 +68,7 @@ system:
 	sudo apt install -y curl 
 	sudo apt install -y wget 
 	sudo apt install -y traceroute 
-	sudo apt install -y ncat 
+	sudo apt install -y netcat 
 	sudo apt install -y nmap 
 	sudo apt install -y tcpdump 
 
@@ -80,7 +80,6 @@ archives:
 	sudo apt install -y unrar
 	sudo apt install -y rar
 	sudo apt install -y zip
-	sudo apt install -y uzip
 
 passwords:
 	sudo apt install -y keepassxc
