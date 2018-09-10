@@ -62,6 +62,7 @@ upgrade:
 system: 
 	sudo apt install -y openssh-server
 	sudo apt install -y cloc 
+	sudo apt install -y tree 
 	sudo apt install -y git 
 	sudo apt install -y rabbitvcs-nautilus 
 	sudo apt install -y curl 
