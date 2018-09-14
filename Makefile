@@ -28,7 +28,7 @@
 #                                                      I8, ,8'                     
 #                                                       "Y8P'                      
 # 
-.PHONY: all update upgrade system filesystem archives passwords fonts themeing wallpapers python ansible virutalbox vim tmux graphics media terminal-load
+.PHONY: all update upgrade system filesystem archives passwords fonts themeing wallpapers python ansible virutalbox vim tmux graphics media terminal-load tweak-tool
 
 
 all:
@@ -50,7 +50,7 @@ all:
 	make graphics 
 	make media 
 	make terminal-load 
-
+	make tweak-tool
 
 update:
 	sudo apt clean all
@@ -167,5 +167,8 @@ terminal-load:
 	# Load a backup of terminal themes
 	dconf load /org/gnome/terminal/ < static/gnome_terminal_settings_backup.txt
 
-
+tweak-tool: 
+	# Install the Ubuntu Tweak tool
+	sudo add-apt-repository universe
+	sudo apt install gnome-tweak-tool
 
