@@ -195,4 +195,12 @@ vpn:
 	sudo apt install -y network-manager-openvpn-gnome
 
 
+system76:
+	# Run this target for System76 Machines (*Not included in overall make target) 
+	sudo apt-add-repository -ys ppa:system76-dev/stable
+	sudo apt update
+	sudo apt install -y system76-driver
+
+
+
 
