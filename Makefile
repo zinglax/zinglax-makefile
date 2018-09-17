@@ -172,7 +172,7 @@ terminal-load:
 tweak-tool: 
 	# Install the Ubuntu Tweak tool
 	sudo add-apt-repository universe
-	sudo apt install gnome-tweak-tool
+	sudo apt install -y gnome-tweak-tool
 
 office-tools:
 	sudo apt install -y freeplane
