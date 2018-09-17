@@ -28,7 +28,7 @@
 #                                                      I8, ,8'                     
 #                                                       "Y8P'                      
 # 
-.PHONY: all update upgrade system filesystem archives passwords fonts themeing wallpapers python ansible virutalbox vim tmux graphics media terminal-load tweak-tool
+.PHONY: all update upgrade system filesystem archives passwords fonts themeing wallpapers python ansible virutalbox vim tmux graphics media terminal-load tweak-tool office-tools
 
 
 all:
@@ -51,6 +51,7 @@ all:
 	make media 
 	make terminal-load 
 	make tweak-tool
+	make office-tools
 
 update:
 	sudo apt clean all
@@ -171,4 +172,8 @@ tweak-tool:
 	# Install the Ubuntu Tweak tool
 	sudo add-apt-repository universe
 	sudo apt install gnome-tweak-tool
+
+office-tools:
+	sudo apt install -y freeplane
+
 
