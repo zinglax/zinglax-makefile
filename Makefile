@@ -106,7 +106,7 @@ wallpapers:
 python:
 	# Python2 
 	sudo apt -y install python-pip
-	sudo pip -y install virtualenv
+	sudo pip install virtualenv
 	
 	# Python3
 	sudo apt -y install python3-pip
