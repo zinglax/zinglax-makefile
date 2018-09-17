@@ -28,7 +28,7 @@
 #                                                      I8, ,8'                     
 #                                                       "Y8P'                      
 # 
-.PHONY: all update upgrade system filesystem archives passwords fonts themeing wallpapers python ansible virutalbox vim tmux graphics media terminal-load tweak-tool office-tools
+.PHONY: all update upgrade system filesystem archives passwords fonts themeing wallpapers python ansible virutalbox vim tmux graphics media terminal-load tweak-tool office-tools screencasting
 
 
 all:
@@ -52,6 +52,7 @@ all:
 	make terminal-load 
 	make tweak-tool
 	make office-tools
+	make screencasting
 
 update:
 	sudo apt clean all
@@ -175,5 +176,17 @@ tweak-tool:
 
 office-tools:
 	sudo apt install -y freeplane
+
+screencasting:
+	# Simple Screen Recorder
+	sudo apt install -y simplescreenrecorder
+	
+	## Open Broadcaster Software Studio 
+	# sudo add-apt-repository ppa:obsproject/obs-studio
+	# sudo apt update
+	# sudo apt install obs-studio
+	
+	## Kazam
+	# sudo apt install kazam
 
 
