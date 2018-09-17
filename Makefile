@@ -28,7 +28,7 @@
 #                                                      I8, ,8'                     
 #                                                       "Y8P'                      
 # 
-.PHONY: all update upgrade system filesystem archives passwords fonts themeing wallpapers python ansible virutalbox vim tmux graphics media terminal-load tweak-tool office-tools screencasting
+.PHONY: all update upgrade system filesystem archives passwords fonts themeing wallpapers python ansible virutalbox vim tmux graphics media terminal-load tweak-tool office-tools screencasting vpn
 
 
 all:
@@ -53,6 +53,7 @@ all:
 	make tweak-tool
 	make office-tools
 	make screencasting
+	make vpn 
 
 update:
 	sudo apt clean all
@@ -188,5 +189,10 @@ screencasting:
 	
 	## Kazam
 	# sudo apt install kazam
+
+vpn:
+	sudo apt install -y network-manager-openvpn 
+	sudo apt install -y network-manager-openvpn-gnome
+
 
 
