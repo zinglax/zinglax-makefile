@@ -130,6 +130,10 @@ vim:
 	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 	    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	vim +PlugInstall +qall
+	
+	# Make VIM the default editor of git
+	git config --global core.editor "vim"
+	
 
 tmux: 
 	sudo apt install -y tmux 
