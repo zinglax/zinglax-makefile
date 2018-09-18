@@ -132,9 +132,8 @@ vim:
 	vim +PlugInstall +qall
 	
 	# Make VIM the default editor of git
-	git config --global core.editor "vim"
+	sh ./static/vim-git.sh
 	
-
 tmux: 
 	sudo apt install -y tmux 
 	cp ./static/tmux.conf ~/.tmux.conf
