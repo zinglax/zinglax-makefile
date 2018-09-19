@@ -126,7 +126,7 @@ virtualbox:
 
 git:
 	sudo apt install -y git 
-	sh ./static/bash-append.sh ./static/git-status.sh git_status
+	sh ./static/bash-append.sh ./static/git-info.sh git_info
 
 vim:
 	sudo apt install -y vim
@@ -168,6 +168,7 @@ media:
 	sudo apt install -y gstreamer1.0-alsa
 	sudo apt install -y gstreamer1.0-fluendo-mp3
 	sudo apt install -y gstreamer1.0-libav
+	sudo apt install -y pavucontrol
 
 terminal-backup:
 	# Make a backup of the current terminal themes

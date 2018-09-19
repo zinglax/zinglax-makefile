@@ -14,5 +14,7 @@ else
     cat $APPENDFILE >> $BASHRC
 fi
 
-source $BASHRC
+
+echo $BASHRC
+. $BASHRC
 
