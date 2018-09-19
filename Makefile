@@ -28,7 +28,7 @@
 #                                                      I8, ,8'                     
 #                                                       "Y8P'                      
 # 
-.PHONY: all update upgrade system filesystem archives passwords fonts themeing wallpapers python ansible virutalbox vim tmux graphics media terminal-load tweak-tool office-tools screencasting vpn
+.PHONY: all update upgrade system filesystem archives passwords fonts themeing wallpapers python ansible virutalbox git vim tmux graphics media terminal-load tweak-tool office-tools screencasting vpn
 
 
 all:
@@ -45,6 +45,7 @@ all:
 	make python 
 	make ansible 
 	make virutalbox 
+	make git 
 	make vim 
 	make tmux 
 	make graphics 
@@ -66,7 +67,6 @@ system:
 	sudo apt install -y openssh-server
 	sudo apt install -y cloc 
 	sudo apt install -y tree 
-	sudo apt install -y git 
 	sudo apt install -y rabbitvcs-nautilus 
 	sudo apt install -y curl 
 	sudo apt install -y wget 
@@ -123,6 +123,10 @@ virtualbox:
 	sudo apt -y install virtualbox-guest-additions-iso
 	sudo apt -y install virtualbox
 	sudo apt -y install virtualbox-guest-dkms
+
+git:
+	sudo apt install -y git 
+	sh ./static/bash-append.sh ./static/git-status.sh git_status
 
 vim:
 	sudo apt install -y vim
