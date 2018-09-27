@@ -28,7 +28,7 @@
 #                                                      I8, ,8'                     
 #                                                       "Y8P'                      
 # 
-.PHONY: all update upgrade system filesystem archives passwords fonts themeing wallpapers python ansible virutalbox git vim tmux graphics media terminal-load tweak-tool office-tools screencasting vpn
+.PHONY: all update upgrade system filesystem archives passwords fonts themeing wallpapers python ansible virutalbox git vim tmux graphics media terminal-load tweak-tool office-tools screencasting vpn bash-extras
 
 
 all:
@@ -55,6 +55,7 @@ all:
 	make office-tools
 	make screencasting
 	make vpn 
+	make bash-extras
 
 update:
 	sudo apt clean all
@@ -111,6 +112,10 @@ python:
 	
 	# Python3
 	sudo apt -y install python3-pip
+	
+	# Virtual ENV tips	
+	sh ./static/bash-append.sh ./static/virtenv.sh VIRTENV 
+
 
 
 ansible:
@@ -126,7 +131,7 @@ virtualbox:
 
 git:
 	sudo apt install -y git 
-	sh ./static/bash-append.sh ./static/git-info.sh git_info
+	sh ./static/bash-append.sh ./static/git-info.sh gitinfo
 
 vim:
 	sudo apt install -y vim
@@ -141,6 +146,7 @@ vim:
 tmux: 
 	sudo apt install -y tmux 
 	cp ./static/tmux.conf ~/.tmux.conf
+	sh ./static/bash-append.sh ./static/auto-tmux.sh AUTO-TMUX 
 
 graphics:
 	# Gimp
@@ -209,6 +215,7 @@ system76:
 	sudo apt update
 	sudo apt install -y system76-driver
 
-
+bash-extras:
+	sh ./static/bash-append.sh ./static/searching-functions.sh SEARCHING-FUNCTIONS 
 
 

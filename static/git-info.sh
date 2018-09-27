@@ -1,5 +1,5 @@
 
-git_info () {
+gitinfo () {
   # Display a information about a git repository 
   # author: Duane Johnson
   # email: duane.johnson@gmail.com
@@ -39,6 +39,4 @@ git_info () {
   
   popd >/dev/null
 }
-
-alias gitinfo=git_info
 
