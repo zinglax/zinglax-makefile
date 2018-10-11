@@ -3,16 +3,6 @@
 " LINE NUMBERS
 set nu
 
-" THEME
-color koehler
-
-" CURSOR LINE
-set cursorline
-
-" CURSOR COLUMN
-set cursorcolumn
-hi CursorColumn cterm=none
-
 " PLUGINS
 " vim-plug (https://github.com/junegunn/vim-plug)
 " installation: 
@@ -51,6 +41,9 @@ Plug 'airblade/vim-gitgutter'
 
 " SVN NERDTree Highlighting
 " Plug 'greggerz/nerdtree-svn-plugin'
+
+" Using plug
+Plug 'dylanaraps/wal.vim'
 
 " PLUGINS END
 call plug#end()
@@ -93,5 +86,18 @@ set pastetoggle=<F3>
 " whitespace delimited, make sure to write json files with indentation as
 " well)
 set foldmethod=indent
+
+" THEME
+" color koehler
+color wal
+
+
+" CURSOR LINE
+set cursorline
+hi CursorLine ctermbg=7 ctermfg=0
+
+" CURSOR COLUMN
+set cursorcolumn
+hi CursorColumn ctermbg=7 ctermfg=0
 
 

@@ -28,7 +28,7 @@
 #                                                      I8, ,8'                     
 #                                                       "Y8P'                      
 # 
-.PHONY: all update upgrade system filesystem archives passwords fonts themeing wallpapers python ansible virutalbox git vim tmux graphics media terminal-load tweak-tool office-tools screencasting vpn bash-extras
+.PHONY: all update upgrade system filesystem archives passwords fonts themeing wallpapers python ansible virutalbox git vim tmux graphics media terminal-load tweak-tool office-tools screencasting vpn bash-extras wal
 
 
 all:
@@ -41,8 +41,9 @@ all:
 	make passwords 
 	make fonts 
 	make themeing 
-	make wallpapers 
 	make python 
+	make wallpapers 
+	make wal 
 	make ansible 
 	make virutalbox 
 	make git 
@@ -104,6 +105,17 @@ wallpapers:
 	# Replace file paths with the current home directory
 	sed -i -e "s|/home/dylan|${HOME}|g" "${HOME}/Pictures/alena-aenami/alena-aenami-wallpaper.xml"
 	sed -i -e "s|/home/dylan|${HOME}|g" "${HOME}/.local/share/gnome-background-properties/zinglax-wallpapers.xml"
+
+wal:
+	# Changing the whole theme of computer
+	# Install Wal
+	sudo --user=root -H pip3 install pywal
+	
+	# Copy every-5-sceonds home	
+	cp ./static/wal-switcher.sh ${HOME}/.wal-switcher.sh
+	
+	# Added wal persist to bash
+	sh ./static/bash-append.sh ./static/wal-theme.sh WAL-THEME	
 
 python:
 	# Python2 
@@ -217,5 +229,6 @@ system76:
 
 bash-extras:
 	sh ./static/bash-append.sh ./static/searching-functions.sh SEARCHING-FUNCTIONS 
+	sh ./static/bash-append.sh ./static/selected-editor.sh SELECTED-EDITOR 
 
 
