@@ -43,7 +43,7 @@ all:
 	make themeing 
 	make python 
 	make wallpapers 
-	make wal 
+	#make wal 
 	make ansible 
 	make virutalbox 
 	make git 
@@ -111,7 +111,7 @@ wal:
 	# Install Wal
 	sudo --user=root -H pip3 install pywal
 	
-	# Copy every-5-sceonds home	
+	# Copy wal-switcher to home	
 	cp ./static/wal-switcher.sh ${HOME}/.wal-switcher.sh
 	
 	# Added wal persist to bash

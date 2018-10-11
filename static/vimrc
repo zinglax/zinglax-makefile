@@ -43,7 +43,7 @@ Plug 'airblade/vim-gitgutter'
 " Plug 'greggerz/nerdtree-svn-plugin'
 
 " Using plug
-Plug 'dylanaraps/wal.vim'
+" Plug 'dylanaraps/wal.vim'
 
 " PLUGINS END
 call plug#end()
@@ -88,8 +88,8 @@ set pastetoggle=<F3>
 set foldmethod=indent
 
 " THEME
-" color koehler
-color wal
+color koehler
+" color wal
 
 
 " CURSOR LINE
