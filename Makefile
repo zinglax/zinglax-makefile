@@ -230,5 +230,6 @@ system76:
 bash-extras:
 	sh ./static/bash-append.sh ./static/searching-functions.sh SEARCHING-FUNCTIONS 
 	sh ./static/bash-append.sh ./static/selected-editor.sh SELECTED-EDITOR 
+	sh ./static/bash-append.sh ./static/directory-swaping-functions.sh DIRECTORY-SWAPING-ALIAS 
 
 
