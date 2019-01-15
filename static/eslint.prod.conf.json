@@ -1,0 +1,28 @@
+{
+	"env"		: {
+		"browser"	: true,
+		"es6" 		: true
+	},
+	"extends": "eslint:recommended",
+	"rules" 	: {
+		"no-continue"	: 0,
+		"no-console"	: { "allow": ["warn", "error"] },
+		"devel"		: true,
+		"indent"	: ["error", 2],
+		"maxerr"	: 50,
+		"newcap"	: true,
+		"nomen"		: true,
+		"plusplus"	: true,
+		"regexp"	: true,
+		"sloppy"	: true,
+		"vars"		: false,
+		"white"		: true
+	},
+
+	"globals" 	: {
+		"$" 	: false,
+		"idb" 	: false,
+		"sg" 	: false
+	}
+
+}

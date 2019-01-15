@@ -28,7 +28,7 @@
 #                                                      I8, ,8'                     
 #                                                       "Y8P'                      
 # 
-.PHONY: all update upgrade system filesystem archives passwords fonts themeing wallpapers python ansible virutalbox git vim tmux graphics media terminal-load tweak-tool office-tools screencasting vpn bash-extras wal
+.PHONY: all update upgrade system filesystem archives passwords fonts themeing wallpapers python ansible virutalbox git vim tmux js graphics media terminal-load tweak-tool office-tools screencasting vpn bash-extras wal
 
 
 all:
@@ -49,6 +49,7 @@ all:
 	make git 
 	make vim 
 	make tmux 
+	make js 
 	make graphics 
 	make media 
 	make terminal-load 
@@ -157,8 +158,28 @@ vim:
 	
 tmux: 
 	sudo apt install -y tmux 
-	cp ./static/tmux.conf ~/.tmux.conf
+	cp ./static/tmux.conf ${HOME}/.tmux.conf
 	sh ./static/bash-append.sh ./static/auto-tmux.sh AUTO-TMUX 
+	
+	# tmuxp for saving and loading sessions
+	sudo pip install tmuxp 
+	mkdir -p ${HOME}/.tmuxp/layouts
+	
+
+js:
+	# NodeJS
+	sudo apt install nodejs
+	
+	# NodeJS Package Manager
+	nodejs -v
+	sudo apt install npm
+	
+	# eslint ( JavaScript Linter ) 
+	sudo npm install -g eslint 
+	mkdir -p ${HOME}/.eslint/conf
+	cp ./static/eslint.*.conf.json ${HOME}/.eslint/conf/
+	sh ./static/bash-append.sh ./static/eslint-helpers.sh ESLINT-HELPERS 
+	
 
 graphics:
 	# Gimp
