@@ -164,7 +164,6 @@ tmux:
 	# tmuxp for saving and loading sessions
 	sudo pip install tmuxp 
 	mkdir -p ${HOME}/.tmuxp/layouts
-	
 
 js:
 	# NodeJS
@@ -179,7 +178,6 @@ js:
 	mkdir -p ${HOME}/.eslint/conf
 	cp ./static/eslint.*.conf.json ${HOME}/.eslint/conf/
 	sh ./static/bash-append.sh ./static/eslint-helpers.sh ESLINT-HELPERS 
-	
 
 graphics:
 	# Gimp
