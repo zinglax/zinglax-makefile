@@ -101,3 +101,13 @@ hi CursorColumn ctermbg=7 ctermfg=0
 
 " Tabs ( Stop it please. )
 set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
+
+
+" HTML to JavaScript String (and back again) from the spa book
+vmap <silent> ;h :s?^\(\s*\)+ '\([^']\+\)',*\s*$?\1\2?g<CR>
+vmap <silent> ;q :s?^\(\s*\)\(.*\)\s*$? \1 + '\2'?<CR>
+
+" HTML to JavaScript template literal (and back again) from the spa book
+vmap <silent> ;a :s?^\(\s*\)+ `\([^`]\+\)`,*\s*$?\1\2?g<CR>
+vmap <silent> ;s :s?^\(\s*\)\(.*\)\s*$? \1 + `\2`?<CR>
+
