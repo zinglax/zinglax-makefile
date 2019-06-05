@@ -91,7 +91,6 @@ set foldmethod=indent
 color koehler
 " color wal
 
-
 " CURSOR LINE
 set cursorline
 hi CursorLine ctermbg=7 ctermfg=0
@@ -100,4 +99,5 @@ hi CursorLine ctermbg=7 ctermfg=0
 set cursorcolumn
 hi CursorColumn ctermbg=7 ctermfg=0
 
-
+" Tabs ( Stop it please. )
+set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
