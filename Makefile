@@ -28,7 +28,7 @@
 #                                                      I8, ,8'                     
 #                                                       "Y8P'                      
 # 
-.PHONY: all update upgrade system filesystem archives passwords fonts themeing wallpapers python ansible virutalbox git vim tmux js graphics media terminal-load tweak-tool office-tools screencasting vpn bash-extras wal
+.PHONY: all update upgrade system filesystem archives passwords fonts google-fonts themeing wallpapers python ansible virutalbox git vim tmux js graphics media terminal-load tweak-tool office-tools screencasting vpn bash-extras wal 
 
 
 all:
@@ -39,7 +39,8 @@ all:
 	make filesystem 
 	make archives 
 	make passwords 
-	make fonts 
+	make fonts
+	make google-fonts
 	make themeing 
 	make python 
 	make wallpapers 
@@ -72,6 +73,7 @@ system:
 	sudo apt install -y tree 
 	sudo apt install -y rabbitvcs-nautilus 
 	sudo apt install -y curl 
+	sudo apt install -y unzip 
 	sudo apt install -y wget 
 	sudo apt install -y traceroute 
 	sudo apt install -y netcat 
@@ -93,6 +95,10 @@ passwords:
 fonts:
 	sudo apt-get install -y fonts-inconsolata
 	sudo fc-cache -fv        
+
+google-fonts:
+	sh ./static/google-fonts_installer.sh
+
 
 themeing: 
 	# Change Scrollbars and highlights	
