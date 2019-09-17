@@ -22,6 +22,17 @@ use-system-font=false
 visible-name='another test'
 font='Tlwg Typo Medium 17'
 
+[legacy/profiles:/:6582e4e0-ed23-41a5-98a3-e367f0bce5ca]
+foreground-color='rgb(101,123,131)'
+visible-name='beachy'
+palette=['rgb(0,0,0)', 'rgb(170,0,0)', 'rgb(0,170,0)', 'rgb(170,85,0)', 'rgb(0,0,170)', 'rgb(170,0,170)', 'rgb(0,170,170)', 'rgb(163,162,162)', 'rgb(85,85,85)', 'rgb(255,85,85)', 'rgb(87,85,255)', 'rgb(247,117,80)', 'rgb(85,85,255)', 'rgb(255,85,255)', 'rgb(12,123,123)', 'rgb(255,255,255)']
+use-transparent-background=true
+use-theme-colors=false
+use-theme-transparency=false
+background-color='rgb(253,246,227)'
+background-transparency-percent=11
+audible-bell=false
+
 [legacy/profiles:/:bbc2e057-cffc-4075-89a8-b3a0097583af]
 foreground-color='rgb(181,244,155)'
 visible-name='green-on-darkblu'
@@ -37,7 +48,7 @@ use-theme-transparency=false
 scrollback-unlimited=true
 bold-color-same-as-fg=true
 background-color='rgb(4,12,32)'
-background-transparency-percent=16
+background-transparency-percent=10
 audible-bell=false
 
 [legacy/profiles:/:9f4c5dc3-3b3d-4f9f-8f35-3bc667b98cc8]
@@ -47,8 +58,8 @@ palette=['rgb(0,0,0)', 'rgb(205,0,0)', 'rgb(0,205,0)', 'rgb(205,205,0)', 'rgb(0,
 visible-name='DylanNoah'
 
 [legacy/profiles:]
-list=['b1dcc9dd-5262-4d8d-a863-c897e6d979b9', 'bbc2e057-cffc-4075-89a8-b3a0097583af', 'f453ca72-88f2-4caa-8a49-389f7b9ea749', '9f4c5dc3-3b3d-4f9f-8f35-3bc667b98cc8']
-default='bbc2e057-cffc-4075-89a8-b3a0097583af'
+list=['b1dcc9dd-5262-4d8d-a863-c897e6d979b9', 'bbc2e057-cffc-4075-89a8-b3a0097583af', 'f453ca72-88f2-4caa-8a49-389f7b9ea749', '9f4c5dc3-3b3d-4f9f-8f35-3bc667b98cc8', '6582e4e0-ed23-41a5-98a3-e367f0bce5ca', '9bc0db5a-ac3a-4a3e-801f-0e08d86482be']
+default='9bc0db5a-ac3a-4a3e-801f-0e08d86482be'
 
 [legacy/profiles:/:d5c7596c-8e9f-4158-ab81-633430ed7af1]
 visible-name='dasfasdf'
@@ -56,7 +67,7 @@ visible-name='dasfasdf'
 [legacy/profiles:/:f453ca72-88f2-4caa-8a49-389f7b9ea749]
 foreground-color='rgb(35,35,35)'
 visible-name='paper'
-palette=['rgb(241,255,224)', 'rgb(220,50,47)', 'rgb(133,153,0)', 'rgb(181,137,0)', 'rgb(38,139,210)', 'rgb(211,54,130)', 'rgb(42,161,152)', 'rgb(238,232,213)', 'rgb(0,43,54)', 'rgb(203,75,22)', 'rgb(88,110,117)', 'rgb(70,85,90)', 'rgb(104,104,105)', 'rgb(67,73,164)', 'rgb(130,6,132)', 'rgb(253,246,227)']
+palette=['rgb(86,145,15)', 'rgb(220,50,47)', 'rgb(133,153,0)', 'rgb(188,165,92)', 'rgb(38,139,210)', 'rgb(211,54,130)', 'rgb(28,160,150)', 'rgb(238,232,213)', 'rgb(0,43,54)', 'rgb(203,75,22)', 'rgb(88,110,117)', 'rgb(70,85,90)', 'rgb(104,104,105)', 'rgb(67,73,164)', 'rgb(97,60,98)', 'rgb(124,171,214)']
 bold-is-bright=true
 cursor-background-color='rgb(93,255,66)'
 cursor-shape='block'
@@ -64,13 +75,23 @@ cursor-colors-set=true
 use-theme-colors=false
 use-system-font=false
 use-transparent-background=true
-font='Inconsolata Medium 12'
+font='FreeMono 12'
 use-theme-transparency=false
 scrollback-unlimited=true
 bold-color-same-as-fg=true
 cursor-blink-mode='system'
 background-color='rgb(252,251,251)'
 background-transparency-percent=4
+audible-bell=false
+
+[legacy/profiles:/:9bc0db5a-ac3a-4a3e-801f-0e08d86482be]
+foreground-color='rgb(206,205,185)'
+visible-name='fall'
+palette=['rgb(46,52,54)', 'rgb(221,68,68)', 'rgb(70,139,5)', 'rgb(196,160,0)', 'rgb(54,164,52)', 'rgb(117,80,123)', 'rgb(6,152,154)', 'rgb(222,231,217)', 'rgb(85,87,83)', 'rgb(251,96,96)', 'rgb(226,136,52)', 'rgb(252,233,79)', 'rgb(114,207,128)', 'rgb(173,127,168)', 'rgb(52,226,226)', 'rgb(205,235,193)']
+use-system-font=false
+use-theme-colors=false
+font='Space Mono 12'
+background-color='rgb(71,67,61)'
 audible-bell=false
 
 [legacy]
