@@ -28,7 +28,7 @@
 #                                                      I8, ,8'                     
 #                                                       "Y8P'                      
 # 
-.PHONY: all update upgrade system filesystem archives passwords fonts google-fonts themeing wallpapers python ansible virutalbox git vim tmux js graphics media terminal-load tweak-tool office-tools screencasting vpn bash-extras wal 
+.PHONY: all update upgrade system filesystem archives passwords fonts google-fonts themeing wallpapers python ansible virutalbox git vim tmux js graphics media terminal-load tweak-tool office-tools screencasting vpn screenshare bash-extras wal 
 
 
 all:
@@ -57,6 +57,7 @@ all:
 	make tweak-tool
 	make office-tools
 	make screencasting
+	make screenshare 
 	make vpn 
 	make bash-extras
 
@@ -99,7 +100,6 @@ fonts:
 google-fonts:
 	sh ./static/google-fonts_installer.sh
 
-
 themeing: 
 	# Change Scrollbars and highlights	
 	sh ./static/ubuntu-18.04-theme.sh
@@ -134,8 +134,6 @@ python:
 	
 	# Virtual ENV tips	
 	sh ./static/bash-append.sh ./static/virtenv.sh VIRTENV 
-
-
 
 ansible:
 	sudo add-apt-repository -y ppa:ansible/ansible
@@ -229,6 +227,9 @@ tweak-tool:
 office-tools:
 	sudo apt install -y freeplane
 
+screenshare:
+	sudo snap install remmina
+
 screencasting:
 	# Simple Screen Recorder
 	sudo apt install -y simplescreenrecorder
@@ -244,7 +245,6 @@ screencasting:
 vpn:
 	sudo apt install -y network-manager-openvpn 
 	sudo apt install -y network-manager-openvpn-gnome
-
 
 system76:
 	# Run this target for System76 Machines (*Not included in overall make target) 
