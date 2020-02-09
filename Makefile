@@ -194,14 +194,15 @@ graphics:
 	sudo add-apt-repository -y ppa:inkscape.dev/stable
 	sudo apt update
 	sudo apt install -y inkscape
-	
-	# Blender
-	sudo apt install -y blender
 
 media: 
-	sudo apt install -y vlc
 	sudo apt install -y ubuntu-restricted-extras
 	sudo apt install -y libxvidcore4
+	
+	# VLC Media Player 
+	sudo apt install -y vlc
+	
+	# GStreamer
 	sudo apt install -y gstreamer1.0-plugins-base
 	sudo apt install -y gstreamer1.0-plugins-good
 	sudo apt install -y gstreamer1.0-plugins-ugly
@@ -209,7 +210,18 @@ media:
 	sudo apt install -y gstreamer1.0-alsa
 	sudo apt install -y gstreamer1.0-fluendo-mp3
 	sudo apt install -y gstreamer1.0-libav
+	
+	# Pulse Audio Volume Control
 	sudo apt install -y pavucontrol
+	
+	# Blender
+	sudo apt install -y blender
+	
+	# OBS Studio 
+	sudo apt-get install -y xserver-xorg-input-all
+	sudo add-apt-repository ppa:obsproject/obs-studio
+	sudo apt-get update
+	sudo apt-get install obs-studio
 
 terminal-backup:
 	# Make a backup of the current terminal themes
