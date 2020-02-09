@@ -219,9 +219,9 @@ media:
 	
 	# OBS Studio 
 	sudo apt-get install -y xserver-xorg-input-all
-	sudo add-apt-repository ppa:obsproject/obs-studio
+	sudo add-apt-repository ppa:obsproject/obs-studio -y
 	sudo apt-get update
-	sudo apt-get install obs-studio
+	sudo apt-get install obs-studio -y
 
 terminal-backup:
 	# Make a backup of the current terminal themes
