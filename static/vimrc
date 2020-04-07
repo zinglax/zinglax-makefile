@@ -111,3 +111,6 @@ vmap <silent> ;q :s?^\(\s*\)\(.*\)\s*$? \1 + '\2'?<CR>
 vmap <silent> ;a :s?^\(\s*\)+ `\([^`]\+\)`,*\s*$?\1\2?g<CR>
 vmap <silent> ;s :s?^\(\s*\)\(.*\)\s*$? \1 + `\2`?<CR>
 
+
+" Auto Reload file
+set autoread
