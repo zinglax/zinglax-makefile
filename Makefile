@@ -60,6 +60,7 @@ all:
 	make screenshare 
 	make vpn 
 	make bash-extras
+	make ios-debugging
 
 update:
 	sudo apt clean all
@@ -269,4 +270,61 @@ bash-extras:
 	sh ./static/bash-append.sh ./static/selected-editor.sh SELECTED-EDITOR 
 	sh ./static/bash-append.sh ./static/directory-swaping-functions.sh DIRECTORY-SWAPING-ALIAS 
 
+ios-debugging:
+	sudo apt install -y autoconf automake autoconf libtool pkg-config gcc 
+	
+	# Install libplist 
+	cd ${HOME}/Gits; \
+	wget -c https://github.com/libimobiledevice/libplist/archive/2.1.0.tar.gz -O - | tar -xz; \
+	cd libplist-2.1.0; \
+	./autogen.sh; \
+	make; \
+	sudo make install;
+	
+	# Install usbmuxd 
+	cd ${HOME}/Gits; \
+	git clone https://github.com/libimobiledevice/usbmuxd.git; \
+	cd usbmuxd; \
+	./autogen.sh; \
+	make; \
+	sudo make install;
+	
+	# Install libimobiledevice
+	cd ${HOME}/Gits; \
+	git clone https://github.com/libimobiledevice/libimobiledevice.git; \
+	cd libimobiledevice; \
+	./autogen.sh; \
+	make; \
+	sudo make install; \
+	
+	# Install libusbmuxd 
+	cd ${HOME}/Gits; \
+	git clone https://github.com/libimobiledevice/libusbmuxd.git; \
+	cd libusbmuxd; \
+	./autogen.sh; \
+	make; \
+	sudo make install;
+	
+	# Install iOS WebKit Debug Proxy.
+	cd ${HOME}/Gits; \
+	wget -c https://github.com/google/ios-webkit-debug-proxy/archive/v1.8.6.tar.gz -O - | tar -xz; \
+	cd ios-webkit-debug-proxy-1.8.6; \
+	./autogen.sh; \
+	make; \
+	sudo make install
+	
+	# Install remote debug adapter.	
+	sudo npm install remotedebug-ios-webkit-adapter -g
 
+	# In order to debug off iOS
+	# On the device Enable Safari Web Inspector
+	# * iOS Settings => Safari preferences => enable "Web Inspector"	
+	# In chrome devtools configure the localhost server
+	# * chrome://inspect/#devices => Configure => Target Discovery Settings add localhost:<port> ( default port is 9000 )
+	# Via the command line start usbmuxd
+	# * sudo usbmuxd -vv -f
+	# Also Via command line start the remotedebug_ios_webkit_adapter
+	# * remotedebug_ios_webkit_adapter -p 9000
+	# Plug the device into the computer and Trust this computer
+	# A gray window on ubuntu should also appear saying its waiting to trust the device
+	#
