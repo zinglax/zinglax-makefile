@@ -28,8 +28,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'https://github.com/majutsushi/tagbar'
 
 " Ansible VIM Syntax
-" Plug 'pearofducks/ansible-vim'
-
+" Plug 'pearofducks/ansible-vim' 
 " Emmet-vim (HTML Editing)
 " Plug 'mattn/emmet-vim'
 
@@ -114,3 +113,15 @@ vmap <silent> ;s :s?^\(\s*\)\(.*\)\s*$? \1 + `\2`?<CR>
 
 " Auto Reload file
 set autoread
+
+" File Find
+set path+=**
+set wildmenu
+set wildignore+=**/node_modules/**
+set wildignore+=**/docs/**
+set hidden
+set wim=longest:full,full 
+
+" No swap 
+set noswapfile
+
