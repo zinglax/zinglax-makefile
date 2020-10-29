@@ -114,7 +114,7 @@ vmap <silent> ;s :s?^\(\s*\)\(.*\)\s*$? \1 + `\2`?<CR>
 " Auto Reload file
 set autoread
 
-" File Find
+" File Find                       
 set path+=**
 set wildmenu
 set wildignore+=**/node_modules/**
