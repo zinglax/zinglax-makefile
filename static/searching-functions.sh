@@ -31,4 +31,6 @@ search_string_files_folder () {
   find $FOLDER -name "$FILES" -type f -print0 | xargs -0 grep -Hn "$STRING"
 }
 
+# SEARCHING-FUNCTIONS ALIAS
+alias ssff="search_string_files_folder"
 
