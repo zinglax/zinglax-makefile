@@ -16,3 +16,19 @@ search_system_dir () {
     sudo find '/' -name '$1' -type d
 }
 
+search_string_files_folder () {
+  # Searchs for string ( regex ) in files ( wildcard ) in folder.
+  STRING=$1
+  FILES=$2
+
+  if [ -z "$3" ]
+    then
+      FOLDER=$3
+  else
+      FOLDER=.
+  fi
+ 
+  find $FOLDER -name "$FILES" -type f -print0 | xargs -0 grep -Hn "$STRING"
+}
+
+
