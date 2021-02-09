@@ -152,7 +152,7 @@ git:
 	sh ./static/bash-append.sh ./static/git-info.sh gitinfo
 
 vim:
-	sudo apt install -y vim
+	sudo apt install -y vim-gtk
 	cp ./static/vimrc ~/.vimrc
 	curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 	    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
