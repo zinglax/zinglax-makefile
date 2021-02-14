@@ -28,7 +28,7 @@
 #                                                      I8, ,8'                     
 #                                                       "Y8P'                      
 # 
-.PHONY: all update upgrade system filesystem archives passwords fonts google-fonts themeing wallpapers python ansible virutalbox git vim tmux js graphics media terminal-load tweak-tool office-tools screencasting vpn screenshare bash-extras wal 
+.PHONY: all update upgrade system filesystem archives passwords fonts google-fonts themeing wallpapers python ansible virutalbox git vim nvim tmux js graphics media terminal-load tweak-tool office-tools screencasting vpn screenshare bash-extras wal 
 
 
 all:
@@ -49,6 +49,7 @@ all:
 	make virutalbox 
 	make git 
 	make vim 
+	make nvim 
 	make tmux 
 	make js 
 	make graphics 
@@ -85,6 +86,7 @@ system:
 filesystem:
 	mkdir -p ${HOME}/Gits
 	mkdir -p ${HOME}/Envs
+	mkdir -p ${HOME}/Programs
 
 archives:
 	sudo apt install -y unrar
@@ -160,7 +162,33 @@ vim:
 	
 	# Make VIM the default editor of git
 	sh ./static/vim-git.sh
+
+nvim:
+	# Download a copy of NeoVim appimage to ~/Programs
+	curl -fLo ${HOME}/Programs/nvim.appimage  https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
 	
+	# Symlink to User Binaries. 
+	sudo ln -fs ${HOME}/Programs/nvim.appimage /usr/bin/nvim
+	sudo ln -fs ${HOME}/Programs/nvim.appimage /opt/nvim
+	
+	# Run the install script, links nvim config files.
+	cd nvim && sh ./install.sh && cd ..
+	
+	# Download Vim-Plug Plugin Manager Plugin ;-) 
+	whoami
+	sh -c 'curl -fLo ${HOME}/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+	
+	# Install Plugins.
+	nvim +PluginInstall +qall
+
+	# Install CoC Language Plugins
+	nvim "+CocInstall coc-tsserver coc-json coc-html coc-css coc-python coc-yaml"
+
+	# Make NeoVim the default editor of git
+	sh ./nvim/nvim-git.sh
+
+
 tmux: 
 	sudo apt install -y tmux 
 	cp ./static/tmux.conf ${HOME}/.tmux.conf

@@ -1,7 +1,7 @@
 
 # SELECTED-EDITOR
-export SELECTED_EDITOR="/usr/bin/vim.basic"
-export VISUAL=vim
+export SELECTED_EDITOR="/usr/bin/nvim.appimage"
+export VISUAL=nvim
 export EDITOR="$VISUAL"
 
 

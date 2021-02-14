@@ -1,8 +1,5 @@
 " zinglax's .vimrc file
 
-" LINE NUMBERS
-set nu
-
 " PLUGINS
 " vim-plug (https://github.com/junegunn/vim-plug)
 " installation: 
@@ -75,6 +72,9 @@ nmap <F8> :TagbarToggle<CR>
 " HTML Tidy up command
 " set sw=2 | %s/>/>\r/ | execute 'normal gg=G' | set nohlsearch | g/^\\s*\$/d
 
+
+" LINE NUMBERS
+set nu
 
 " Paste Toggle
 " Tap this button when you wanna paste something into the vim editor
