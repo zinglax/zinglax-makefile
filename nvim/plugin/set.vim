@@ -43,12 +43,16 @@ hi CursorColumn ctermbg=7 ctermfg=0
 " Tabs ( Stop it please. )
 set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
 
-" HTML to JavaScript String (and back again) from the spa book
-vmap <silent> ;h :s?^\(\s*\)+ '\([^']\+\)',*\s*$?\1\2?g<CR>
-vmap <silent> ;q :s?^\(\s*\)\(.*\)\s*$? \1 + '\2'?<CR>
+" Give more space for displaying messages.
+set cmdheight=2
 
-" HTML to JavaScript template literal (and back again) from the spa book
-vmap <silent> ;a :s?^\(\s*\)+ `\([^`]\+\)`,*\s*$?\1\2?g<CR>
-vmap <silent> ;s :s?^\(\s*\)\(.*\)\s*$? \1 + `\2`?<CR>
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
 
+" Some servers have issues with backup files, see #649.
+set nobackup
+set nowritebackup
 
+" No Highlight Search
+set nohlsearch

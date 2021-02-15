@@ -1,5 +1,8 @@
 set exrc " Wont open project .nvimrc without this here
 
+" Leader
+let mapleader = " "
+
 " this will install vim-plug if not installed
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
     silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
@@ -23,15 +26,22 @@ Plug 'https://github.com/scrooloose/nerdtree.git'
 
 " AirLine (status bar)
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" TmuxLine
+Plug 'edkolev/tmuxline.vim'
 
 " Tag Bar
 " sudo apt-get install 
 Plug 'https://github.com/majutsushi/tagbar'
 
 " Ale Linting
-Plug 'dense-analysis/ale'
+" Plug 'dense-analysis/ale'
 
 " Coc ( Conquor of Completion )
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Polyglot
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
