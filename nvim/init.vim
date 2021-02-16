@@ -44,4 +44,10 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Polyglot
 Plug 'sheerun/vim-polyglot'
 
+" Vim Testing.
+  Plug 'janko/vim-test'
+
+" Vimspector
+ Plug 'puremourning/vimspector'
+
 call plug#end()

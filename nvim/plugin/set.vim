@@ -56,3 +56,12 @@ set nowritebackup
 
 " No Highlight Search
 set nohlsearch
+
+" Spliting Windows.
+set splitright " splits to the right
+set splitbelow " splits below
+
+" Search
+set ignorecase " search case insensitive
+set smartcase " search via smartcase
+set incsearch " search incremental

@@ -6,8 +6,8 @@
 " \b \f \g : go back/forward/last-used
 " \1 \2 \3 : go to buffer 1/2/3 etc
 nnoremap <Leader>l :ls<CR>
-nnoremap <Leader>q :bw<CR>
-nnoremap <Leader>d :bd<CR>
+nnoremap <Leader>q :bw<CR> " Quits Buffer ( No Save )
+" nnoremap <Leader>d :bd<CR>
 nnoremap <Leader>T :bp<CR>
 nnoremap <Leader>t :bn<CR>
 nnoremap <Leader>g :e#<CR>
