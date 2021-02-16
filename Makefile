@@ -98,7 +98,8 @@ passwords:
 
 fonts:
 	sudo apt-get install -y fonts-inconsolata
-	sudo fc-cache -fv        
+	sudo fc-cache -fv
+	sudo apt-get install -y fonts-powerline
 
 google-fonts:
 	sh ./static/google-fonts_installer.sh
@@ -181,13 +182,15 @@ nvim:
 	
 	# Install Plugins.
 	nvim +PluginInstall +qall
-
+	
 	# Install CoC Language Plugins
 	nvim "+CocInstall coc-tsserver coc-json coc-html coc-css coc-python coc-yaml"
-
+	
 	# Make NeoVim the default editor of git
 	sh ./nvim/nvim-git.sh
-
+	
+	# Install Powerline Fonts
+	sudo apt-get install -y fonts-powerline
 
 tmux: 
 	sudo apt install -y tmux 
