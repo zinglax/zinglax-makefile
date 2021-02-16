@@ -32,6 +32,9 @@ set foldmethod=indent
 color koehler
 " color wal
 
+" No Gui Cursor
+set guicursor=
+
 " CURSOR LINE
 set cursorline
 hi CursorLine ctermbg=7 ctermfg=0

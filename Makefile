@@ -200,17 +200,23 @@ tmux:
 
 js:
 	# NodeJS
-	sudo apt install nodejs
+	sudo apt install -y nodejs
 	
 	# NodeJS Package Manager
 	nodejs -v
-	sudo apt install npm
+	sudo apt install -y npm
 	
 	# eslint ( JavaScript Linter ) 
 	sudo npm install -g eslint 
 	mkdir -p ${HOME}/.eslint/conf
 	cp ./static/eslint.*.conf.json ${HOME}/.eslint/conf/
 	sh ./static/bash-append.sh ./static/eslint-helpers.sh ESLINT-HELPERS 
+	
+	# Install NVM
+	sudo apt install -y build-essential checkinstall libssl-dev	
+	curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.35.1/install.sh | bash
+	nvm install latest
+	nvm alias default node	
 
 graphics:
 	# Gimp
