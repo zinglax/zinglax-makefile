@@ -28,20 +28,22 @@ set pastetoggle=<F3>
 " well)
 set foldmethod=indent
 
-" THEME
-color koehler
-" color wal
 
 " No Gui Cursor
 set guicursor=
 
 " CURSOR LINE
 set cursorline
-hi CursorLine ctermbg=7 ctermfg=0
+" hi CursorLine ctermbg=7 ctermfg=0
 
 " CURSOR COLUMN
 set cursorcolumn
-hi CursorColumn ctermbg=7 ctermfg=0
+" hi CursorColumn ctermbg=7 ctermfg=0
+" hi CursorColumn ctermbg=7 ctermfg=0
+
+" THEME
+color koehler
+" color wal
 
 " Tabs ( Stop it please. )
 set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
