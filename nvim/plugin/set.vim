@@ -38,12 +38,17 @@ set cursorline
 
 " CURSOR COLUMN
 set cursorcolumn
+hi CursorColumn term=bold cterm=bold
 " hi CursorColumn ctermbg=7 ctermfg=0
 " hi CursorColumn ctermbg=7 ctermfg=0
 
 " THEME
 color koehler
 " color wal
+
+
+" CURSOR COLUMN NO UNDERLINE DECORATION.
+hi CursorColumn term=bold cterm=bold
 
 " Tabs ( Stop it please. )
 set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
