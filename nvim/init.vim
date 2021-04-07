@@ -45,9 +45,15 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
 
 " Vim Testing.
-  Plug 'janko/vim-test'
+Plug 'janko/vim-test'
 
 " Vimspector
- Plug 'puremourning/vimspector'
+Plug 'puremourning/vimspector'
+
+" Telescope
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 call plug#end()

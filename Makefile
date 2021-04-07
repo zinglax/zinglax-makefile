@@ -28,7 +28,7 @@
 #                                                      I8, ,8'                     
 #                                                       "Y8P'                      
 # 
-.PHONY: all update upgrade system filesystem archives passwords fonts google-fonts themeing wallpapers python ansible virutalbox git vim nvim tmux js graphics media terminal-load tweak-tool office-tools screencasting vpn screenshare bash-extras wal 
+.PHONY: all update upgrade system ripgrep filesystem archives passwords fonts google-fonts themeing wallpapers python ansible virutalbox git vim nvim tmux js graphics media terminal-load tweak-tool office-tools screencasting vpn screenshare bash-extras wal 
 
 
 all:
@@ -36,6 +36,7 @@ all:
 	make update
 	make upgrade 
 	make system 
+	make ripgrep 
 	make filesystem 
 	make archives 
 	make passwords 
@@ -82,6 +83,11 @@ system:
 	sudo apt install -y netcat 
 	sudo apt install -y nmap 
 	sudo apt install -y tcpdump 
+
+ripgrep:
+	wget -c https://github.com/BurntSushi/ripgrep/releases/download/12.1.1/ripgrep_12.1.1_amd64.deb -O ./ripgrep.deb
+	sudo apt install -y ./ripgrep.deb;
+	rm ./ripgrep.deb
 
 filesystem:
 	mkdir -p ${HOME}/Gits
@@ -164,7 +170,7 @@ vim:
 	# Make VIM the default editor of git
 	sh ./static/vim-git.sh
 
-nvim:
+nvim: ripgrep
 	# Download a copy of NeoVim appimage to ~/Programs
 	curl -fLo ${HOME}/Programs/nvim.appimage  https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
 	

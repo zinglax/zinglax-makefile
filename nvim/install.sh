@@ -2,6 +2,7 @@
 mkdir -p $HOME/.config/nvim/plugin
 mkdir -p $HOME/.config/nvim/after/plugin
 mkdir -p $HOME/.config/nvim/lua
+mkdir -p $HOME/.config/nvim/lua/zinglax
 
 # link wholesale
 for f in `find . -regex ".*\.vim$\|.*\.lua$"`; do
