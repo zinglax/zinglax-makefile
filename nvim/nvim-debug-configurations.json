@@ -1,0 +1,96 @@
+{
+  "configurations": {
+    "pytest": {
+      "adapter": "debugpy",
+      "breakpoints": {
+        "exceptions": {
+          "all": "N",
+          "uncaught": "N"
+        }
+      },
+      "configuration": {
+        "request": "launch",
+        "name": "Debug Python Test",
+        "type": "python",
+        "runtimeArgs": [
+          "/home/dylan/Envs/met/bin/pytest",
+          "${file}",
+          "-k",
+          "'${TestName}'",
+          "--full-trace"
+        ],
+        "console": "integratedTerminal",
+        "skipfiles": [],
+        "internalConsoleOptions": "neverOpen"
+      }
+    },
+
+
+    "Pytest: Launch": {
+      "adapter": "debugpy",
+      "configuration": {
+        "name": "Pytest: Launch",
+        "type": "python",
+        "request": "launch",
+        "python": "/home/dylan/Envs/met/bin/python3.8",
+        "console": "integratedTerminal",
+        "debugOptions": [],
+        "subProcess": true,
+        "program": "/home/dylan/Envs/met/bin/pytest",
+        "args": [
+          "${cwd}/${TestName}"
+        ]
+      }
+    },
+
+
+
+
+
+    "mocha": {
+      "adapter": "vscode-node",
+      "breakpoints": {
+        "exceptions": {
+          "all": "N",
+          "uncaught": "N"
+        }
+      },
+      "configuration": {
+        "request": "launch",
+        "name": "Debug Mocha Test",
+        "type": "node",
+        "runtimeArgs": [
+          "--inspect-brk",
+          "/home/dylan/.nvm/versions/node/v15.8.0/bin/mocha",
+          "${file}",
+          "-f",
+          "'${TestName}'",
+          "--color",
+          "--inline-diffs",
+          "--full-trace"
+        ],
+        "console": "integratedTerminal",
+        "skipfiles": ["<node_internals>/**/*.js"],
+        "internalConsoleOptions": "neverOpen",
+        "port": 9229
+      }
+    },
+    "attach": {
+      "adapter": "vscode-node",
+      "default": true,
+      "breakpoints": {
+        "exceptions": {
+          "all": "N",
+          "uncaught": "N"
+        }
+      },
+      "configuration": {
+        "name": "Attach to Process",
+        "type": "node",
+        "request": "attach",
+        "skipfiles": ["<node_internals>/**/*.js"],
+        "processId": "${processId}"
+      }
+    }
+  }
+}

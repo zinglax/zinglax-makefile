@@ -59,15 +59,6 @@ let g:vimspector_sign_priority = {
 " https://youtu.be/-AZUIL1rY3U?t=145
 " ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' '
 
-" ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' '
-" janko/vim-test and puremourning/vimspector
-nnoremap <leader>dd :TestNearest -strategy=mocha<CR>
-function! MochaStrategy(cmd)
-  let testName = matchlist(a:cmd, '\v -t ''(.*)''')[1]
-  call vimspector#LaunchWithSettings( #{ configuration: 'mocha', TestName: testName } )
-endfunction      
-let g:test#custom_strategies = {'mocha': function('MochaStrategy')}
-" ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' '
 
 
 

@@ -45,16 +45,26 @@ hi CursorColumn term=bold cterm=bold
 " THEME
 color koehler
 " color wal
-
+" color darkblue
 
 " CURSOR COLUMN NO UNDERLINE DECORATION.
 hi CursorColumn term=bold cterm=bold
+
+" ColorColumn (cc)
+set colorcolumn=80
+hi! link ColorColumn CursorColumn
+
+" Pmenu Colors
+hi! link Pmenu airline_c
+hi! link PmenuSel airline_a_bold
+hi! link PmenuThumb airline_warning_inactive
+hi! link PmenuSbar airline_b
 
 " Tabs ( Stop it please. )
 set tabstop=2 softtabstop=0 expandtab shiftwidth=2 smarttab
 
 " Give more space for displaying messages.
-set cmdheight=2
+set cmdheight=1
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
@@ -68,8 +78,8 @@ set nowritebackup
 set nohlsearch
 
 " Spliting Windows.
-set splitright " splits to the right
-set splitbelow " splits below
+" set splitright " splits to the right
+" set splitbelow " splits below
 
 " Search
 set ignorecase " search case insensitive

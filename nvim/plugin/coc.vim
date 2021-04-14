@@ -127,6 +127,6 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " Highlight Floating Windows
 " use :h cterm-colors to view color list
 " set ctermfg for foreground and ctermbg for background
-highlight CocErrorFloat ctermbg=0  " Background Black
+" highlight CocErrorFloat ctermbg=0  " Background Black
 "hi link CocFloating markdown
-
+" Use the hi command to see what colors things are set to
