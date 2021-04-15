@@ -28,8 +28,6 @@ endfunction
 function! PytestStrategy(cmd)
   echo 'Full Command: ' . a:cmd
   let testName = matchlist(a:cmd, 'pytest \(.*\)')[1]
-  " let testName = a:cmd
-  echo testName
   call vimspector#LaunchWithSettings( #{ configuration: 'Pytest: Launch', TestName: testName } )
 endfunction
 
