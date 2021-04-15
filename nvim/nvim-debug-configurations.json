@@ -1,31 +1,5 @@
 {
   "configurations": {
-    "pytest": {
-      "adapter": "debugpy",
-      "breakpoints": {
-        "exceptions": {
-          "all": "N",
-          "uncaught": "N"
-        }
-      },
-      "configuration": {
-        "request": "launch",
-        "name": "Debug Python Test",
-        "type": "python",
-        "runtimeArgs": [
-          "/home/dylan/Envs/met/bin/pytest",
-          "${file}",
-          "-k",
-          "'${TestName}'",
-          "--full-trace"
-        ],
-        "console": "integratedTerminal",
-        "skipfiles": [],
-        "internalConsoleOptions": "neverOpen"
-      }
-    },
-
-
     "Pytest: Launch": {
       "adapter": "debugpy",
       "configuration": {
@@ -40,19 +14,23 @@
         "args": [
           "${cwd}/${TestName}"
         ]
+      },
+      "breakpoints": {
+        "exception": {
+          "caught": "",
+          "uncaught": "",
+          "raised": ""
+        }
       }
     },
-
-
-
 
 
     "mocha": {
       "adapter": "vscode-node",
       "breakpoints": {
         "exceptions": {
-          "all": "N",
-          "uncaught": "N"
+          "all": "",
+          "uncaught": ""
         }
       },
       "configuration": {
@@ -75,6 +53,41 @@
         "port": 9229
       }
     },
+
+
+    "mocha2": {
+      "adapter": "vscode-node",
+      "breakpoints": {
+        "exception": {
+          "all": "",
+          "uncaught": ""
+        }
+      },
+      "configuration": {
+        "args": [
+          "-u",
+          "bdd",
+          "--timeout",
+          "999999",
+          "--colors",
+          "${cwd}/${TestName}"
+        ],
+        "console": "integratedTerminal",
+        "internalConsoleOptions": "openOnSessionStart",
+        "name": "Mocha Tests",
+        "program": "${cwd}/node_modules/mocha/bin/_mocha",
+        "request": "launch",
+        "skipFiles": [
+          "<node_internals>/**"
+        ],
+        "envFile": "${cwd}/.env",
+        "type": "node"
+      }
+    },
+
+
+
+
     "attach": {
       "adapter": "vscode-node",
       "default": true,
