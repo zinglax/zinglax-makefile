@@ -1,4 +1,3 @@
-
 " janko/vim-test
 nnoremap <silent> tt :TestNearest<CR>
 nnoremap <silent> tf :TestFile<CR>
@@ -8,25 +7,22 @@ let test#strategy = "neovim"
 let test#neovim#term_position = "vertical"
 
 
-
 " ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' '
 " Custom Strategies
 function! MochaStrategy(cmd)
-  let testName = matchlist(a:cmd, '\v -t ''(.*)''')[1]
-  call vimspector#LaunchWithSettings( #{ configuration: 'mocha', TestName: testName } )
-endfunction      
-
-function! MochaStrategy2(cmd)
   let testName = matchlist(a:cmd, '\(.*\)mocha \(test.*\.test\.js\)')[2]
-  let testCmd = a:cmd
-  " echo testCmd
-  echo testName
-  call vimspector#LaunchWithSettings( #{ configuration: 'mocha2', Command: testCmd, TestName: testName } )
-endfunction      
 
+  try
+    let testGrep = matchlist(a:cmd, '\(.*\)mocha \(test.*\.test\.js\) --grep \(.*\)')[3]
+  catch /list index out of range/
+    let testGrep = '.*'
+  endtry
+
+  call vimspector#LaunchWithSettings( #{ configuration: 'mocha2', TestGrep: testGrep, TestName: testName } )
+endfunction      
 
 function! EchoStrategy(cmd)
-  echo 'It works! Command for running tests: ' . a:cmd
+  echo 'echoing VIM-Test Command: ' . a:cmd
 endfunction
 
 function! PytestStrategy(cmd)
@@ -37,22 +33,13 @@ function! PytestStrategy(cmd)
   call vimspector#LaunchWithSettings( #{ configuration: 'Pytest: Launch', TestName: testName } )
 endfunction
 
-
 let g:test#custom_strategies = {
       \ 'echo': function('EchoStrategy'), 
-      \ 'mocha': function('MochaStrategy'),
-      \ 'mocha2': function('MochaStrategy2'),
+      \ 'mocha2': function('MochaStrategy'),
       \ 'pytest': function('PytestStrategy'),
       \ }
-
-" let g:test#strategy = 'echo'
-
-
 
 nnoremap <leader>dd :TestNearest -strategy=echo<CR>
 nnoremap <leader>dp :TestNearest -strategy=pytest<CR>
 nnoremap <leader>dm :TestNearest -strategy=mocha2<CR>
-
-
-
 " ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' ' '

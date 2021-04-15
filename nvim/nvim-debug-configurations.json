@@ -25,36 +25,6 @@
     },
 
 
-    "mocha": {
-      "adapter": "vscode-node",
-      "breakpoints": {
-        "exceptions": {
-          "all": "",
-          "uncaught": ""
-        }
-      },
-      "configuration": {
-        "request": "launch",
-        "name": "Debug Mocha Test",
-        "type": "node",
-        "runtimeArgs": [
-          "--inspect-brk",
-          "/home/dylan/.nvm/versions/node/v15.8.0/bin/mocha",
-          "${file}",
-          "-f",
-          "'${TestName}'",
-          "--color",
-          "--inline-diffs",
-          "--full-trace"
-        ],
-        "console": "integratedTerminal",
-        "skipfiles": ["<node_internals>/**/*.js"],
-        "internalConsoleOptions": "neverOpen",
-        "port": 9229
-      }
-    },
-
-
     "mocha2": {
       "adapter": "vscode-node",
       "breakpoints": {
@@ -70,7 +40,9 @@
           "--timeout",
           "999999",
           "--colors",
-          "${cwd}/${TestName}"
+          "${cwd}/${TestName}",
+          "--grep",
+          "${TestGrep:.*}"
         ],
         "console": "integratedTerminal",
         "internalConsoleOptions": "openOnSessionStart",
@@ -84,8 +56,6 @@
         "type": "node"
       }
     },
-
-
 
 
     "attach": {
