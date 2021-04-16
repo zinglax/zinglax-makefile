@@ -85,3 +85,10 @@ set nohlsearch
 set ignorecase " search case insensitive
 set smartcase " search via smartcase
 set incsearch " search incremental
+
+" Clipboard
+set clipboard=unnamedplus
+
+" Setting the global python for neovim. 
+let g:python3_host_prog = '/usr/bin/python3'
+

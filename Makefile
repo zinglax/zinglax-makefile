@@ -85,6 +85,7 @@ system:
 	sudo apt install -y nmap 
 	sudo apt install -y tcpdump 
 	sudo apt install -y mongodb 
+	sudo apt install -y xclip
 
 initial_ssh:
 	./static/initial_ssh.sh
@@ -198,7 +199,9 @@ vim:
 	# Make VIM the default editor of git
 	sh ./static/vim-git.sh
 
-nvim: ripgrep
+nvim: ripgrep nvim_prereqs nvim_appimage nvim_vimplug nvim_plugins
+	
+nvim_appimage:
 	# Download a copy of NeoVim appimage to ~/programs
 	curl -fLo ${PROGRAMS}/nvim.appimage  https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
 	chmod +x ${PROGRAMS}/nvim.appimage
@@ -206,25 +209,44 @@ nvim: ripgrep
 	# Symlink to User Binaries. 
 	sudo ln -fs ${PROGRAMS}/nvim.appimage /usr/bin/nvim
 	sudo ln -fs ${PROGRAMS}/nvim.appimage /opt/nvim
-	
+
+nvim_vimplug:
 	# Download Vim-Plug Plugin Manager Plugin ;-) 
 	sh -c 'curl -fLo ${HOME}/.local/share/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+	
+	# Install Plugins.
+	nvim +PluginInstall +qall
 
+nvim_prereqs:
+	# Python NeoVim Package 
+	sudo pip3 install neovim
+	
+	# NodeJS NeoVim Package 
+	npm install -g neovim
+	
+	# Install Powerline Fonts
+	sudo apt-get install -y fonts-powerline
+
+nvim_plugins:
 	# Run the install script, links nvim config files.
 	cd nvim && sh ./install.sh && cd ..
-
+	
 	# Install Plugins.
 	nvim +PluginInstall +qall
 	
 	# Install CoC Language Plugins
-	nvim "+CocInstall coc-tsserver coc-json coc-html coc-css coc-python coc-yaml"
+	nvim "+CocInstall coc-tsserver coc-json coc-html coc-css coc-git coc-python coc-yaml" +qall!
 	
 	# Make NeoVim the default editor of git
 	sh ./nvim/nvim-git.sh
 	
-	# Install Powerline Fonts
-	sudo apt-get install -y fonts-powerline
+	# Vimspector link debug config JSON
+	mkdir -p ${HOME}/.config/vimspector-config/configurations/linux/_all
+	ln -snf ${GITS}/zinglax-makefile/nvim/config/nvim-debug-configurations.json ${HOME}/.config/vimspector-config/configurations/linux/_all/nvim_config.json
+	
+	# Vimspector install python & node debugging programs 
+	nvim "+VimspectorInstall debugpy vscode-node-debug2" +qall!
 
 tmux: 
 	sudo apt install -y tmux 
@@ -255,25 +277,30 @@ js:
 	nvm install latest
 	nvm alias default node	
 
-graphics:
+graphics: inkscape gimp
+
+gimp:
 	# Gimp
 	sudo apt-get autoremove gimp gimp-plugin-registry
 	sudo add-apt-repository -y ppa:otto-kesselgulasch/gimp
 	sudo apt update
 	sudo apt install -y gimp
-	
+
+inkscape:
 	# Inkscape
 	sudo add-apt-repository -y ppa:inkscape.dev/stable
 	sudo apt update
 	sudo apt install -y inkscape
 
-media: 
+media: vlc gstreamer pulse_audio blender obs
 	sudo apt install -y ubuntu-restricted-extras
 	sudo apt install -y libxvidcore4
-	
+
+vlc:
 	# VLC Media Player 
 	sudo apt install -y vlc
-	
+
+gstreamer:
 	# GStreamer
 	sudo apt install -y gstreamer1.0-plugins-base
 	sudo apt install -y gstreamer1.0-plugins-good
@@ -282,13 +309,16 @@ media:
 	sudo apt install -y gstreamer1.0-alsa
 	sudo apt install -y gstreamer1.0-fluendo-mp3
 	sudo apt install -y gstreamer1.0-libav
-	
+
+pulse_audio:
 	# Pulse Audio Volume Control
 	sudo apt install -y pavucontrol
-	
+
+blender:
 	# Blender
 	sudo apt install -y blender
-	
+
+obs:
 	# OBS Studio 
 	sudo apt-get install -y xserver-xorg-input-all
 	sudo add-apt-repository ppa:obsproject/obs-studio -y
@@ -432,6 +462,9 @@ gsettings:
 	# Keyboard Speed & Delay
 	gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 14
 	gsettings set org.gnome.desktop.peripherals.keyboard delay 253
+	
+	# Desktop Icons
+	gsettings set org.gnome.desktop.background show-desktop-icons false
 
 gsettings_list:
 	gsettings list-recursively | nvim
