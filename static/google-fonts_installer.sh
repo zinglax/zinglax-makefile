@@ -11,7 +11,9 @@ F_EXT="TTF"
 LF_DIR=${HOME}/.local/share/fonts 
 
 # Google Fonts URL 
-GF_URL="https://github.com/google/fonts/archive/fonts-main.zip"
+# GF_URL="https://codeload.github.com/google/fonts/zip/fonts-main.zip"
+GF_URL="https://github.com/google/fonts/archive/main.zip"
+
 
 # Google Fonts Local ( Extracted ) Directory
 GFL_DIR=${HOME}/.local/share/google-fonts 
@@ -27,10 +29,6 @@ echo "Google Fonts Zip:\t\t${GF_ZIP}"
 #ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
 #Z STEPS ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
 #ZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
-# Get Google Fonts Zip from URL
-echo "Get Google Fonts Zip from URL"
-curl -o ${GF_ZIP} ${GF_URL}
-
 # Ensure Local Fonts Directoy Exists
 echo "Ensure Local Fonts Directoy Exists"
 if [ ! -d "$LF_DIR" ]; then
@@ -48,6 +46,10 @@ fi
 # Empty Google Fonts Local Directoy
 echo "Empty Google Fonts Local Directoy"
 rm -rf ${GFL_DIR}/*
+
+# Get Google Fonts Zip from URL
+echo "Get Google Fonts Zip from URL"
+curl -L -o ${GF_ZIP} --create-dirs  ${GF_URL}
 
 # Unzip Google Fonts Zip to Google Fonts Local Directoy 
 echo "Unzip Google Fonts Zip to Google Fonts Local Directoy "
