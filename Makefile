@@ -93,6 +93,8 @@ filesystem:
 	mkdir -p ${HOME}/gits
 	mkdir -p ${HOME}/envs
 	mkdir -p ${HOME}/programs
+	sh ./static/bash-append.sh ./static/filesystem.sh FILESYSTEM
+
 
 archives:
 	sudo apt install -y unrar
@@ -172,12 +174,12 @@ vim:
 	sh ./static/vim-git.sh
 
 nvim: ripgrep
-	# Download a copy of NeoVim appimage to ~/Programs
-	curl -fLo ${HOME}/Programs/nvim.appimage  https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
+	# Download a copy of NeoVim appimage to ~/programs
+	curl -fLo ${HOME}/programs/nvim.appimage  https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
 	
 	# Symlink to User Binaries. 
-	sudo ln -fs ${HOME}/Programs/nvim.appimage /usr/bin/nvim
-	sudo ln -fs ${HOME}/Programs/nvim.appimage /opt/nvim
+	sudo ln -fs ${HOME}/programs/nvim.appimage /usr/bin/nvim
+	sudo ln -fs ${HOME}/programs/nvim.appimage /opt/nvim
 	
 	# Run the install script, links nvim config files.
 	cd nvim && sh ./install.sh && cd ..
