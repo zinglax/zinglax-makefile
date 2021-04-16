@@ -115,7 +115,11 @@ dropbox:
 fonts:
 	sudo apt-get install -y fonts-inconsolata
 	sudo fc-cache -fv
-	sudo apt-get install -y fonts-powerline
+	
+	# Powerline Fonts 
+	git clone https://github.com/powerline/fonts.git --depth=1
+	sh ./fonts/install.sh
+	rm -rf fonts
 
 google-fonts:
 	sh ./static/google-fonts_installer.sh
