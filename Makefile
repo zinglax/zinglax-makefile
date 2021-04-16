@@ -28,7 +28,7 @@
 #                                                      I8, ,8'                     
 #                                                       "Y8P'                      
 # 
-.PHONY: all update upgrade system ripgrep filesystem archives passwords fonts google-fonts themeing wallpapers python ansible virutalbox git vim nvim tmux js graphics media terminal-load tweak-tool office-tools screencasting vpn screenshare bash-extras wal 
+.PHONY: all update upgrade system ripgrep filesystem archives passwords dropbox fonts google-fonts themeing wallpapers python ansible virutalbox git vim nvim tmux js graphics media terminal-load tweak-tool office-tools screencasting vpn screenshare bash-extras wal 
 
 
 all:
@@ -40,6 +40,7 @@ all:
 	make filesystem 
 	make archives 
 	make passwords 
+	make dropbox
 	make fonts
 	make google-fonts
 	make themeing 
@@ -104,6 +105,13 @@ archives:
 passwords:
 	sudo apt install -y keepassxc
 
+dropbox:
+	curl -k -O -L https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2020.03.04_amd64.deb
+	sudo apt install -y ./dropbox_2020.03.04_amd64.deb
+	rm ./dropbox_2020.03.04_amd64.deb
+	dropbox autostart y
+	dropbox start -i
+
 fonts:
 	sudo apt-get install -y fonts-inconsolata
 	sudo fc-cache -fv
@@ -145,6 +153,12 @@ python:
 	sudo apt -y install python3-pip
 	sudo pip3 install virtualenv
 	
+	# Link Python3 to Python
+	sudo ln -s /usr/bin/python3 /usr/bin/python
+	
+	# Link Python3 to Python
+	sudo ln -s /usr/bin/pip3 /usr/bin/pip
+	
 	# Virtual ENV tips	
 	sh ./static/bash-append.sh ./static/virtenv.sh VIRTENV 
 
@@ -175,20 +189,20 @@ vim:
 
 nvim: ripgrep
 	# Download a copy of NeoVim appimage to ~/programs
-	curl -fLo ${HOME}/programs/nvim.appimage  https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
+	curl -fLo ${PROGRAMS}/nvim.appimage  https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
+	chmod +x ${PROGRAMS}/nvim.appimage
 	
 	# Symlink to User Binaries. 
-	sudo ln -fs ${HOME}/programs/nvim.appimage /usr/bin/nvim
-	sudo ln -fs ${HOME}/programs/nvim.appimage /opt/nvim
-	
-	# Run the install script, links nvim config files.
-	cd nvim && sh ./install.sh && cd ..
+	sudo ln -fs ${PROGRAMS}/nvim.appimage /usr/bin/nvim
+	sudo ln -fs ${PROGRAMS}/nvim.appimage /opt/nvim
 	
 	# Download Vim-Plug Plugin Manager Plugin ;-) 
-	whoami
 	sh -c 'curl -fLo ${HOME}/.local/share/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-	
+
+	# Run the install script, links nvim config files.
+	cd nvim && sh ./install.sh && cd ..
+
 	# Install Plugins.
 	nvim +PluginInstall +qall
 	
