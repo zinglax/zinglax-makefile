@@ -240,7 +240,8 @@ nvim_plugins:
 	# Install CoC Language Plugins
 	nvim "+CocInstall coc-tsserver coc-json coc-html coc-css coc-git coc-python coc-yaml" +qall!
 	
-	# Make NeoVim the default editor of git
+	# Make NeoVim the selected editor
+	sh ./static/bash-append.sh ./static/selected-editor.sh SELECTED-EDITOR 
 	sh ./nvim/nvim-git.sh
 	
 	# Vimspector link debug config JSON
