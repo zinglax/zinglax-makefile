@@ -425,4 +425,14 @@ geckodriver:
 
 selenium_testing: geckodriver chromedriver
 
+gsettings:
+	# Hot Corner
+	gsettings set org.gnome.desktop.interface enable-hot-corners true
+	
+	# Keyboard Speed & Delay
+	gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 14
+	gsettings set org.gnome.desktop.peripherals.keyboard delay 253
+
+gsettings_list:
+	gsettings list-recursively | nvim
 
