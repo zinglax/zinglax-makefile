@@ -84,6 +84,13 @@ system:
 	sudo apt install -y netcat 
 	sudo apt install -y nmap 
 	sudo apt install -y tcpdump 
+	sudo apt install -y mongodb 
+
+initial_ssh:
+	./static/initial_ssh.sh
+
+gitlab_access:
+	sh ./static/bash-append.sh ./static/gitlab_access.sh GITLAB_VARS
 
 ripgrep:
 	wget -c https://github.com/BurntSushi/ripgrep/releases/download/12.1.1/ripgrep_12.1.1_amd64.deb -O ./ripgrep.deb
@@ -237,10 +244,10 @@ js:
 	sudo apt install -y npm
 	
 	# eslint ( JavaScript Linter ) 
-	sudo npm install -g eslint 
-	mkdir -p ${HOME}/.eslint/conf
-	cp ./static/eslint.*.conf.json ${HOME}/.eslint/conf/
-	sh ./static/bash-append.sh ./static/eslint-helpers.sh ESLINT-HELPERS 
+	# sudo npm install -g eslint 
+	# mkdir -p ${HOME}/.eslint/conf
+	# cp ./static/eslint.*.conf.json ${HOME}/.eslint/conf/
+	# sh ./static/bash-append.sh ./static/eslint-helpers.sh ESLINT-HELPERS 
 	
 	# Install NVM
 	sudo apt install -y build-essential checkinstall libssl-dev	
@@ -391,4 +398,31 @@ ios-debugging:
 	# * remotedebug_ios_webkit_adapter -p 9000
 	# Plug the device into the computer and Trust this computer
 	# A gray window on ubuntu should also appear saying its waiting to trust the device
-	#
+
+
+chrome:
+	wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+	sudo apt install -y ./google-chrome-stable_current_amd64.deb
+	rm ./google-chrome-stable_current_amd64.deb
+
+chromedriver: chrome
+	wget https://chromedriver.storage.googleapis.com/88.0.4324.96/chromedriver_linux64.zip
+	unzip chromedriver_linux64.zip
+	mkdir -p ${PROGRAMS}/chrome
+	mv chromedriver ${PROGRAMS}/chrome
+	chmod +x ${PROGRAMS}/chrome/chromedriver
+	sudo ln -snf ${PROGRAMS}/chrome/chromedriver /usr/local/bin/
+	rm chromedriver_linux64.zip
+
+geckodriver:
+	wget https://github.com/mozilla/geckodriver/releases/download/v0.29.0/geckodriver-v0.29.0-linux32.tar.gz
+	tar -xvzf geckodriver-v0.29.0-linux32.tar.gz
+	mkdir -p ${PROGRAMS}/firefox
+	mv geckodriver ${PROGRAMS}/firefox
+	chmod +x ${PROGRAMS}/firefox/geckodriver
+	sudo ln -snf ${PROGRAMS}/firefox/geckodriver /usr/local/bin/
+	rm geckodriver-v0.29.0-linux32.tar.gz
+
+selenium_testing: geckodriver chromedriver
+
+

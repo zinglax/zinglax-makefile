@@ -11,6 +11,7 @@ then
     echo "bash file already has this functionality" 
 else
     # code if not found
+    echo "" >> $BASHRC
     cat $APPENDFILE >> $BASHRC
 fi
 
