@@ -1,5 +1,5 @@
 # VIRTENV
-VIRTUAL_ENVS=$HOME/Envs
+VIRTUAL_ENVS=$HOME/envs
 virtevn () {
 
     if [ -d $VIRTUAL_ENVS ]   # for file "if [-f $HOME/file.txt]"

@@ -90,9 +90,9 @@ ripgrep:
 	rm ./ripgrep.deb
 
 filesystem:
-	mkdir -p ${HOME}/Gits
-	mkdir -p ${HOME}/Envs
-	mkdir -p ${HOME}/Programs
+	mkdir -p ${HOME}/gits
+	mkdir -p ${HOME}/envs
+	mkdir -p ${HOME}/programs
 
 archives:
 	sudo apt install -y unrar
@@ -136,11 +136,12 @@ wal:
 
 python:
 	# Python2 
-	sudo apt -y install python-pip
-	sudo pip install virtualenv
+	# sudo apt -y install python-pip
+	# sudo pip install virtualenv
 	
 	# Python3
 	sudo apt -y install python3-pip
+	sudo pip3 install virtualenv
 	
 	# Virtual ENV tips	
 	sh ./static/bash-append.sh ./static/virtenv.sh VIRTENV 
@@ -317,7 +318,7 @@ ios-debugging:
 	sudo apt install -y autoconf automake autoconf libtool pkg-config gcc 
 	
 	# Install libplist 
-	cd ${HOME}/Gits; \
+	cd ${HOME}/gits; \
 	wget -c https://github.com/libimobiledevice/libplist/archive/2.1.0.tar.gz -O - | tar -xz; \
 	cd libplist-2.1.0; \
 	./autogen.sh; \
@@ -325,7 +326,7 @@ ios-debugging:
 	sudo make install;
 	
 	# Install usbmuxd 
-	cd ${HOME}/Gits; \
+	cd ${HOME}/gits; \
 	git clone https://github.com/libimobiledevice/usbmuxd.git; \
 	cd usbmuxd; \
 	./autogen.sh; \
@@ -333,7 +334,7 @@ ios-debugging:
 	sudo make install;
 	
 	# Install libimobiledevice
-	cd ${HOME}/Gits; \
+	cd ${HOME}/gits; \
 	git clone https://github.com/libimobiledevice/libimobiledevice.git; \
 	cd libimobiledevice; \
 	./autogen.sh; \
@@ -341,7 +342,7 @@ ios-debugging:
 	sudo make install; \
 	
 	# Install libusbmuxd 
-	cd ${HOME}/Gits; \
+	cd ${HOME}/gits; \
 	git clone https://github.com/libimobiledevice/libusbmuxd.git; \
 	cd libusbmuxd; \
 	./autogen.sh; \
@@ -349,7 +350,7 @@ ios-debugging:
 	sudo make install;
 	
 	# Install iOS WebKit Debug Proxy.
-	cd ${HOME}/Gits; \
+	cd ${HOME}/gits; \
 	wget -c https://github.com/google/ios-webkit-debug-proxy/archive/v1.8.6.tar.gz -O - | tar -xz; \
 	cd ios-webkit-debug-proxy-1.8.6; \
 	./autogen.sh; \
