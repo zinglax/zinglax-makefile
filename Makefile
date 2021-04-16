@@ -164,12 +164,14 @@ python:
 	# Python3
 	sudo apt -y install python3-pip
 	sudo pip3 install virtualenv
+	sudo pip3 install gunicorn
+	sudo pip3 install uvicorn 
 	
 	# Link Python3 to Python
-	sudo ln -s /usr/bin/python3 /usr/bin/python
+	sudo ln -snf /usr/bin/python3 /usr/bin/python
 	
 	# Link Python3 to Python
-	sudo ln -s /usr/bin/pip3 /usr/bin/pip
+	sudo ln -snf /usr/bin/pip3 /usr/bin/pip
 	
 	# Virtual ENV tips	
 	sh ./static/bash-append.sh ./static/virtenv.sh VIRTENV 
