@@ -17,6 +17,42 @@ background-color='rgb(0,0,0)'
 background-transparency-percent=20
 audible-bell=false
 
+[legacy/profiles:/:239c8b79-1ff4-40fb-89a5-680654da052f]
+foreground-color='rgb(170,244,96)'
+visible-name='back-green-black'
+default-size-columns=80
+default-size-rows=37
+cursor-background-color='rgb(255,100,13)'
+use-system-font=false
+cursor-colors-set=true
+use-theme-colors=false
+use-transparent-background=true
+cursor-foreground-color='rgb(255,255,255)'
+font='Space Mono for Powerline 12'
+scrollback-unlimited=true
+use-theme-transparency=false
+cursor-blink-mode='on'
+background-color='rgb(0,0,0)'
+background-transparency-percent=20
+audible-bell=false
+
+[legacy/profiles:/:fa7fc4fb-c83a-4893-94ca-e6c538102819]
+foreground-color='rgb(121,143,168)'
+visible-name='paper2'
+login-shell=false
+palette=['rgb(46,52,54)', 'rgb(221,68,68)', 'rgb(70,139,5)', 'rgb(118,184,0)', 'rgb(54,164,52)', 'rgb(117,80,123)', 'rgb(6,152,154)', 'rgb(222,231,217)', 'rgb(85,87,83)', 'rgb(241,158,158)', 'rgb(211,159,43)', 'rgb(104,144,39)', 'rgb(114,207,158)', 'rgb(172,105,164)', 'rgb(52,226,226)', 'rgb(203,235,193)']
+bold-is-bright=true
+use-system-font=false
+cursor-colors-set=false
+highlight-colors-set=false
+use-theme-colors=false
+font='Space Mono 12'
+bold-color-same-as-fg=false
+bold-color='rgb(207,210,17)'
+background-color='rgb(246,249,251)'
+audible-bell=false
+cursor-blink-mode='system'
+
 [legacy/profiles:/:924adb43-3e10-4da0-9a96-558375c1f622]
 use-system-font=false
 visible-name='another test'
@@ -58,7 +94,7 @@ palette=['rgb(0,0,0)', 'rgb(205,0,0)', 'rgb(0,205,0)', 'rgb(205,205,0)', 'rgb(0,
 visible-name='DylanNoah'
 
 [legacy/profiles:]
-list=['b1dcc9dd-5262-4d8d-a863-c897e6d979b9', 'bbc2e057-cffc-4075-89a8-b3a0097583af', 'f453ca72-88f2-4caa-8a49-389f7b9ea749', '9f4c5dc3-3b3d-4f9f-8f35-3bc667b98cc8', '6582e4e0-ed23-41a5-98a3-e367f0bce5ca', '9bc0db5a-ac3a-4a3e-801f-0e08d86482be']
+list=['b1dcc9dd-5262-4d8d-a863-c897e6d979b9', 'bbc2e057-cffc-4075-89a8-b3a0097583af', 'f453ca72-88f2-4caa-8a49-389f7b9ea749', '9f4c5dc3-3b3d-4f9f-8f35-3bc667b98cc8', '6582e4e0-ed23-41a5-98a3-e367f0bce5ca', '9bc0db5a-ac3a-4a3e-801f-0e08d86482be', 'fa7fc4fb-c83a-4893-94ca-e6c538102819', '239c8b79-1ff4-40fb-89a5-680654da052f']
 default='9bc0db5a-ac3a-4a3e-801f-0e08d86482be'
 
 [legacy/profiles:/:d5c7596c-8e9f-4158-ab81-633430ed7af1]
@@ -87,11 +123,17 @@ audible-bell=false
 [legacy/profiles:/:9bc0db5a-ac3a-4a3e-801f-0e08d86482be]
 foreground-color='rgb(206,205,185)'
 visible-name='fall'
-palette=['rgb(46,52,54)', 'rgb(221,68,68)', 'rgb(70,139,5)', 'rgb(196,160,0)', 'rgb(54,164,52)', 'rgb(117,80,123)', 'rgb(6,152,154)', 'rgb(222,231,217)', 'rgb(85,87,83)', 'rgb(251,96,96)', 'rgb(226,136,52)', 'rgb(252,233,79)', 'rgb(114,207,128)', 'rgb(173,127,168)', 'rgb(52,226,226)', 'rgb(205,235,193)']
+login-shell=false
+palette=['rgb(46,52,54)', 'rgb(221,68,68)', 'rgb(70,139,5)', 'rgb(196,160,0)', 'rgb(54,164,52)', 'rgb(117,80,123)', 'rgb(6,152,154)', 'rgb(222,231,217)', 'rgb(85,87,83)', 'rgb(251,96,96)', 'rgb(226,156,52)', 'rgb(223,252,79)', 'rgb(114,207,128)', 'rgb(173,127,168)', 'rgb(52,226,226)', 'rgb(205,235,193)']
 use-system-font=false
+cursor-colors-set=false
+highlight-colors-set=false
 use-theme-colors=false
-font='Space Mono 12'
-background-color='rgb(71,67,61)'
+use-transparent-background=true
+font='Ubuntu Mono derivative Powerline 12'
+use-theme-transparency=false
+background-color='rgb(64,62,59)'
+background-transparency-percent=0
 audible-bell=false
 
 [legacy]
