@@ -11,7 +11,7 @@ F_EXT="TTF"
 LF_DIR=${HOME}/.local/share/fonts 
 
 # Google Fonts URL 
-GF_URL="https://github.com/google/fonts/archive/main.zip"
+GF_URL="https://github.com/google/fonts/archive/fonts-main.zip"
 
 # Google Fonts Local ( Extracted ) Directory
 GFL_DIR=${HOME}/.local/share/google-fonts 
