@@ -283,28 +283,27 @@ js:
 graphics: inkscape gimp
 
 gimp:
-	# Gimp
 	sudo apt-get autoremove gimp gimp-plugin-registry
-	sudo add-apt-repository -y ppa:otto-kesselgulasch/gimp
+	sudo add-apt-repository -y --remove ppa:otto-kesselgulasch/gimp
+	sudo add-apt-repository -y ppa:ubuntuhandbook1/gimp
 	sudo apt update
-	sudo apt install -y gimp
+	sudo apt install -y gimp gmic
 
 inkscape:
-	# Inkscape
 	sudo add-apt-repository -y ppa:inkscape.dev/stable
 	sudo apt update
 	sudo apt install -y inkscape
 
-media: vlc gstreamer pulse_audio blender obs
+media: media_libs vlc gstreamer pulse_audio blender obs
+
+media_libs:
 	sudo apt install -y ubuntu-restricted-extras
 	sudo apt install -y libxvidcore4
 
 vlc:
-	# VLC Media Player 
 	sudo apt install -y vlc
 
 gstreamer:
-	# GStreamer
 	sudo apt install -y gstreamer1.0-plugins-base
 	sudo apt install -y gstreamer1.0-plugins-good
 	sudo apt install -y gstreamer1.0-plugins-ugly
@@ -314,19 +313,22 @@ gstreamer:
 	sudo apt install -y gstreamer1.0-libav
 
 pulse_audio:
-	# Pulse Audio Volume Control
 	sudo apt install -y pavucontrol
 
 blender:
-	# Blender
-	sudo apt install -y blender
+	wget https://mirror.clarkson.edu/blender/release/Blender2.92/blender-2.92.0-linux64.tar.xz
+	tar -xvf blender-2.92.0-linux64.tar.xz
+	cp -r blender-2.92.0-linux64 ${PROGRAMS}
+	rm blender-2.92.0-linux64.tar.xz
+	rm -rf blender-2.92.0-linux64
+	sudo ln -snf ${PROGRAMS}/blender-2.92.0-linux64/blender /usr/local/bin/blender
+	sudo ln -snf ${PROGRAMS}/blender-2.92.0-linux64/blender.desktop /usr/share/applications/blender.desktop
 
 obs:
-	# OBS Studio 
-	sudo apt-get install -y xserver-xorg-input-all
-	sudo add-apt-repository ppa:obsproject/obs-studio -y
-	sudo apt-get update
-	sudo apt-get install obs-studio -y
+	sudo apt install -y ffmpeg xserver-xorg-input-all v4l2loopback-dkms
+	sudo add-apt-repository -y ppa:obsproject/obs-studio -y
+	sudo apt update
+	sudo apt install -y obs-studio
 
 terminal-backup:
 	# Make a backup of the current terminal themes
@@ -337,7 +339,6 @@ terminal-load:
 	dconf load /org/gnome/terminal/ < static/gnome_terminal_settings_backup.txt
 
 tweak-tool: 
-	# Install the Ubuntu Tweak tool
 	sudo add-apt-repository universe
 	sudo apt install -y gnome-tweak-tool
 
@@ -347,24 +348,12 @@ office-tools:
 screenshare:
 	sudo snap install remmina
 
-screencasting:
-	# Simple Screen Recorder
-	sudo apt install -y simplescreenrecorder
-	
-	## Open Broadcaster Software Studio 
-	# sudo add-apt-repository ppa:obsproject/obs-studio
-	# sudo apt update
-	# sudo apt install obs-studio
-	
-	## Kazam
-	# sudo apt install kazam
-
 vpn:
 	sudo apt install -y network-manager-openvpn 
 	sudo apt install -y network-manager-openvpn-gnome
 
 system76:
-	# Run this target for System76 Machines (*Not included in overall make target) 
+	# Run this target for System76 Machines
 	sudo apt-add-repository -ys ppa:system76-dev/stable
 	sudo apt update
 	sudo apt install -y system76-driver
@@ -471,4 +460,17 @@ gsettings:
 
 gsettings_list:
 	gsettings list-recursively | nvim
+
+minecraft: 
+	wget https://launcher.mojang.com/download/Minecraft.deb
+	sudo apt install -y ./Minecraft.deb
+	rm ./Minecraft.deb
+
+docker:
+	sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
+	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+	sudo add-apt-repository -y "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+	sudo apt update
+	sudo apt install -y docker-ce
+	sudo usermod -aG docker ${USER}
 
