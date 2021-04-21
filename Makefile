@@ -102,6 +102,8 @@ filesystem:
 	mkdir -p ${HOME}/gits
 	mkdir -p ${HOME}/envs
 	mkdir -p ${HOME}/programs
+	mkdir -p ${HOME}/blender
+	mkdir -p ${HOME}/games
 	sh ./static/bash-append.sh ./static/filesystem.sh FILESYSTEM
 
 
@@ -357,6 +359,13 @@ system76:
 	sudo apt-add-repository -ys ppa:system76-dev/stable
 	sudo apt update
 	sudo apt install -y system76-driver
+
+system76-keyboard:
+	curl -k -O -L https://github.com/withinboredom/system-76-keyboards/releases/download/1.1.0/package.deb
+	sudo apt install -y libx11-6 libx11-dev x11-utils ./package.deb
+	rm ./package.deb
+	sudo systemctl restart keyboard-colors
+
 
 bash-extras:
 	sh ./static/bash-append.sh ./static/searching-functions.sh SEARCHING-FUNCTIONS 
