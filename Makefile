@@ -231,6 +231,9 @@ nvim_prereqs:
 	
 	# Install Powerline Fonts
 	sudo apt-get install -y fonts-powerline
+	
+	# Universal Ctags
+	sudo apt-get install -y universal-ctags
 
 nvim_plugins:
 	# Run the install script, links nvim config files.
@@ -367,10 +370,18 @@ system76-keyboard:
 	sudo systemctl restart keyboard-colors
 
 
-bash-extras:
+bash-extras: directory-swaping-functions selected-editor searching-functions watch_and_run
+searching-functions:
 	sh ./static/bash-append.sh ./static/searching-functions.sh SEARCHING-FUNCTIONS 
+
+selected-editor:
 	sh ./static/bash-append.sh ./static/selected-editor.sh SELECTED-EDITOR 
+
+directory-swaping-functions:
 	sh ./static/bash-append.sh ./static/directory-swaping-functions.sh DIRECTORY-SWAPING-ALIAS 
+
+watch_and_run:
+	sh ./static/bash-append.sh ./static/watch_and_run.sh WATCH_AND_RUN
 
 ios-debugging:
 	sudo apt install -y autoconf automake autoconf libtool pkg-config gcc 
