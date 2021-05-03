@@ -243,7 +243,7 @@ nvim_plugins:
 	nvim +PluginInstall +qall
 	
 	# Install CoC Language Plugins
-	nvim "+CocInstall coc-tsserver coc-json coc-html coc-css coc-git coc-python coc-yaml" +qall!
+	nvim "+CocInstall coc-tsserver coc-json coc-html coc-css coc-git coc-pyright coc-yaml" +qall!
 	
 	# Make NeoVim the selected editor
 	sh ./static/bash-append.sh ./static/selected-editor.sh SELECTED-EDITOR 
@@ -493,4 +493,16 @@ docker:
 	sudo apt update
 	sudo apt install -y docker-ce
 	sudo usermod -aG docker ${USER}
+
+rdp_server:
+	sudo apt update
+	sudo apt install -y xrdp
+	sudo systemctl status xrdp
+	sudo adduser xrdp ssl-cert
+	sudo systemctl restart xrdp
+
+tightvnc:
+	sudo apt install -y ubuntu-desktop
+	sudo apt install -y xfce4 xfce4-goodies
+	sudo apt install -y tightvncserver
 
